@@ -34,9 +34,10 @@ padding-top: 70px: /* Matches the height of the header */
 .tabs {
     display: flex; /* Aligns the tabs horizontally */
     justify-content: space-around; /* Spreads the tabs evenly */
-    position: relative; /* Keeps tabs positioned normally */
-    top: 0; /* Places tabs at the top of the page */
-    width: 100%; /* Full width of the page */
+    position: fixed; /* Stays at the top of the page */
+    top: 0; /* Aligns tabs at the very top */
+    left: 0; /* Ensures it's aligned to the left edge */
+    width: 100%; /* Spans the full width of the screen */
     margin-top: 70px; /* Adds space below the logo */
     background-color: #999; /* Background color for the tab bar */
     z-index: 1000; /* Ensures it's above other elements */
