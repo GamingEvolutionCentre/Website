@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="tabs">
+   <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+    <button class="tablinks" onclick="openTab(event, 'About')">About</button>
+    <button class="tablinks" onclick="openTab(event, 'Downloads')">Downloads</button>
+    <button class="tablinks" onclick="openTab(event, 'Merch')">Merch</button>
+    <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+</div>
+
+<div id="Home" class="tabcontent">
+  <p> </p>
+</div>
+
+<div id="About" class="tabcontent">
+  <p> </p>
+</div>
+
+<div id="Downloads" class="tabcontent">
+  <p>Here you can download our latest products:</p>
+  <ul>
+    <li><a href="file1.zip" download>Download File 1</a></li>
+    <li><a href="file2.zip" download>Download File 2</a></li>
+  </ul>
+</div>
+
+<div id="Merch" class="tabcontent">
+    <ul>
+    <li>Coming Soon</li>
+   </ul>
+</div>
+    
+<div id="Contact" class="tabcontent">
+<body>
+    <form class="contact-form" action="contact.php" method="POST">
+        <h2>Contact Me</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Send Message</button>
+    </form>
+</body>
+</html>
+</div>
+
+<footer>
+  <p>&copy; All rights reserved belong to Gaming Evolution Centre.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

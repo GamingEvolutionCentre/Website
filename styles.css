@@ -1,0 +1,38 @@
+body {
+font-family: Arial;
+background-color: #999;
+color: black;
+margin: 0;
+}
+
+.tabs {
+overflow: hidden;
+background-color: #999;
+}
+
+.tabs button {
+background-color: inherit;
+color: black;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+transition: 0.3s;
+font-size: 17px;
+}
+
+.tabs button.active {
+background-color: #999;
+}
+
+.tabcontent {
+display: none;
+padding: 20px;
+color: black;
+margin-top: 10px;
+}
+
+h2 {
+color: black;
+}
