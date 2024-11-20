@@ -1,3 +1,16 @@
+header {
+    position: fixed; /* Keeps the logo fixed at the top-left */
+    top: 0;
+    left: 0;
+    padding: 10px; /* Adjust padding as needed */
+    z-index: 1000; /* Ensures the logo is above other elements */
+}
+
+#logo img {
+    height: 50px; /* Adjust the height of your logo */
+    width: auto; /* Maintains aspect ratio */
+}
+
 body {
 font-family: Arial;
 background-color: #999;
