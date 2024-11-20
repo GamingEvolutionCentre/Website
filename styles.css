@@ -8,6 +8,9 @@ header {
     z-index: 1000; /* Ensures it's on top of other content */
 }
 
+nav {
+    z-index: 1010: /* Higher than the logo, so it's clickable
+
 #logo img {
     height: 100px; /* Adjust to the desired size */
     width: auto; /* Maintains the logo's aspect ratio */
@@ -17,7 +20,8 @@ body {
 font-family: Arial;
 background-color: #999;
 color: black;
-margin: 10;
+margin: 0; /* Remove default margins */
+padding-top: 70px: /* Adjust this value to the height of your header/logo */
 }
 
 .tabs {
