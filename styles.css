@@ -17,7 +17,7 @@ body {
 font-family: Arial;
 background-color: #999;
 color: black;
-margin: 50;
+margin: 10;
 }
 
 .tabs {
@@ -32,7 +32,7 @@ float: left;
 border: none;
 outline: none;
 cursor: pointer;
-padding: 14px 16px;
+padding: 24px 26px;
 transition: 0.3s;
 font-size: 17px;
 }
