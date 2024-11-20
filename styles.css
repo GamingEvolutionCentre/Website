@@ -1,14 +1,16 @@
+/* Style for the header and logo */
 header {
-    position: fixed; /* Keeps the logo fixed at the top-left */
+    position: fixed; /* Keeps the logo fixed at the top */
     top: 0;
     left: 0;
-    padding: 10px; /* Adjust padding as needed */
-    z-index: 1000; /* Ensures the logo is above other elements */
+    padding: 10px; /* Space around the logo */
+    background-color: transparent; /* No background color */
+    z-index: 1000; /* Ensures it's on top of other content */
 }
 
 #logo img {
-    height: 50px; /* Adjust the height of your logo */
-    width: auto; /* Maintains aspect ratio */
+    height: 50px; /* Adjust to the desired size */
+    width: auto; /* Maintains the logo's aspect ratio */
 }
 
 body {
