@@ -7,7 +7,7 @@ header {
     height: 70px; /* Adjust to fit logo size */
     display: flex; /* Aligns children (logo and tabs) horizontally */
     justify-content: space-between;
-    align-item: center; /* Vertically centers logo and tabs */
+    /*align-item: center; /* Vertically centers logo and tabs */
     padding: 10px 20px; /* Space around the logo */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000: /* High enough to appear above most elements */
