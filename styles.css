@@ -9,7 +9,7 @@ header {
 }
 
 #logo img {
-    height: 50px; /* Adjust to the desired size */
+    height: 100px; /* Adjust to the desired size */
     width: auto; /* Maintains the logo's aspect ratio */
 }
 
