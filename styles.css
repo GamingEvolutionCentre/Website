@@ -36,7 +36,7 @@ padding-top: 70px: /* Matches the height of the header */
     justify-content: space-around; /* Spreads the tabs evenly */
     position: fixed; /* Stays at the top of the page */
     top: 0; /* Aligns tabs at the very top */
-    left: 0; /* Ensures it's aligned to the left edge */
+    left: 50; /* Ensures it's aligned to the left edge */
     width: 100%; /* Spans the full width of the screen */
     margin-top: 70px; /* Adds space below the logo */
     background-color: #999; /* Background color for the tab bar */
