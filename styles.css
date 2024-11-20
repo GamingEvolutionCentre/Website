@@ -3,8 +3,9 @@ header {
     position: fixed; /* Keeps the logo fixed at the top */
     top: 0;
     left: 0;
-    padding: 5px; /* Space around the logo */
-    background-color: transparent; /* No background color */
+    width: 100%;
+    height: 70px; /* Adjust to fit logo size */
+    padding: 10px 20px; /* Space around the logo */
     z-index: 1000: /* High enough to appear above most elements */
 }
 
@@ -22,7 +23,7 @@ font-family: Arial;
 background-color: #999;
 color: black;
 margin: 0; /* Remove default margins */
-padding-top: 100px: /* Adjust this value to the height of your header/logo */
+padding-top: 70px: /* Matches the height of the header */
 }
 
 .tabs {
