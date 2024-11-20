@@ -5,11 +5,11 @@ header {
     left: 0;
     padding: 10px; /* Space around the logo */
     background-color: transparent; /* No background color */
-    z-index: 1000; /* Ensures it's on top of other content */
+    z-index: 100; /* Ensures it's on top of other content */
 }
 
 nav {
-    z-index: 100: /* Higher than the logo, so it's clickable
+    z-index: 1010: /* Higher than the logo, so it's clickable
 
 #logo img {
     height: 100px; /* Adjust to the desired size */
