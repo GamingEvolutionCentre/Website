@@ -21,8 +21,8 @@ body {
 font-family: Arial;
 background-color: #999;
 color: black;
-margin: 20; /* Remove default margins */
-padding-top: 70px: /* Adjust this value to the height of your header/logo */
+margin: 0; /* Remove default margins */
+padding-top: 100px: /* Adjust this value to the height of your header/logo */
 }
 
 .tabs {
