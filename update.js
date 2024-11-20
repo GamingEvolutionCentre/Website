@@ -15,7 +15,7 @@
         const repo = "Website";
 
         // Optionally include your personal access token for private repos
-        const token = "your-github-token"; // Leave as empty string for public repos
+        const token = ""; // Leave as empty string for public repos
         
         async function fetchUpdates() {
             const url = `https://api.github.com/repos/${username}/${repo}/commits`;
