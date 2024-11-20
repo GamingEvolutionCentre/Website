@@ -3,12 +3,12 @@ header {
     position: fixed; /* Keeps the logo fixed at the top */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100px;
     height: 70px; /* Adjust to fit logo size */
     display: flex;
     justify-content: space-between;
     align-item: center;
-    padding: 1px 2px; /* Space around the logo */
+    padding: 10px 20px; /* Space around the logo */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000: /* High enough to appear above most elements */
 }
