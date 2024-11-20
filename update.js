@@ -11,8 +11,8 @@
 
     <script>
         // Replace with your GitHub username and repository
-        const username = "your-username";
-        const repo = "your-repository";
+        const username = "GamingEvolutionCentre";
+        const repo = "Website";
 
         // Optionally include your personal access token for private repos
         const token = "your-github-token"; // Leave as empty string for public repos
