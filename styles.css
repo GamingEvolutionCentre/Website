@@ -3,7 +3,7 @@ header {
     position: fixed; /* Keeps the logo fixed at the top */
     top: 0;
     left: 0;
-    padding: 10px; /* Space around the logo */
+    padding: 50px; /* Space around the logo */
     background-color: transparent; /* No background color */
     z-index: 1000; /* Ensures it's on top of other content */
 }
