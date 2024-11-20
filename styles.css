@@ -5,7 +5,6 @@ header {
     left: 0;
     padding: 5px; /* Space around the logo */
     background-color: transparent; /* No background color */
-    z-index: 100; /* Ensures it's on top of other content */
 }
 
 nav {
