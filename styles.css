@@ -14,14 +14,14 @@ nav {
 
 #logo img {
     height: 100px; /* Adjust to the desired size */
-    width: auto; /* Maintains the logo's aspect ratio */
+    width: 100px; /* Maintains the logo's aspect ratio */
 }
 
 body {
 font-family: Arial;
 background-color: #999;
 color: black;
-margin: 0; /* Remove default margins */
+margin: 20; /* Remove default margins */
 padding-top: 70px: /* Adjust this value to the height of your header/logo */
 }
 
