@@ -5,6 +5,9 @@ header {
     left: 0;
     width: 100%;
     height: 70px; /* Adjust to fit logo size */
+    display: flex;
+    justify-content: space-between;
+    align-item: center;
     padding: 10px 20px; /* Space around the logo */
     z-index: 1000: /* High enough to appear above most elements */
 }
@@ -23,6 +26,7 @@ font-family: Arial;
 background-color: #999;
 color: black;
 margin: 0; /* Remove default margins */
+padding: 0;
 padding-top: 70px: /* Matches the height of the header */
 }
 
