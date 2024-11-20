@@ -9,7 +9,7 @@ header {
 }
 
 nav {
-    z-index: 1010: /* Higher than the logo, so it's clickable
+    z-index: 100: /* Higher than the logo, so it's clickable
 
 #logo img {
     height: 100px; /* Adjust to the desired size */
