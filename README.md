@@ -1,3 +1,3 @@
 # Website
 
-https://gamingevolutioncentre.github.io/Website-2/
+https://gamingevolutioncentre.github.io/Website/
