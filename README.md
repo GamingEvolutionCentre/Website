@@ -10,4 +10,4 @@
 > This website gets uploaded to regular.
 
 # License
-![](https://img.shields.io/badge/LICENSE-BSD_4_CLAUSE_-green)
+![](https://img.shields.io/badge/LICENSE-BSD_3_CLAUSE_-green)
