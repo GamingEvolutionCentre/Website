@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+<section class="page-hero">
+    <div class="container">
+        <p class="section-label">GAMING EVOLUTION CENTRE</p>
+        <h1>{{ .Title }}</h1>
+
+        {{ with .Params.description }}
+            <p class="page-hero-description">{{ . }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<section class="posts-section">
+    <div class="container">
+        <div class="posts-grid">
+            {{ range .Pages.ByDate.Reverse }}
+                {{ $page := . }}
+
+                <article class="content-card post-list-card">
+                    {{ with $page.Params.image }}
+                        <a href="{{ $page.RelPermalink }}" class="card-image-wrapper">
+                            <img
+                                src="{{ . }}"
+                                alt="{{ $page.Title }}"
+                                class="card-image"
+                                loading="lazy"
+                            >
+                        </a>
+                    {{ end }}
+
+                    <div class="card-content">
+                        <div class="card-meta">
+                            {{ with $page.Params.categories }}
+                                <span class="card-category">{{ index . 0 }}</span>
+                            {{ end }}
+
+                            <span>{{ $page.Date.Format "2 January 2006" }}</span>
+                            <span>{{ $page.ReadingTime }} min read</span>
+                        </div>
+
+                        <h2>
+                            <a href="{{ $page.RelPermalink }}">
+                                {{ $page.LinkTitle }}
+                            </a>
+                        </h2>
+
+                        <p>
+                            {{ with $page.Params.description }}
+                                {{ . }}
+                            {{ else }}
+                                {{ $page.Summary | plainify | truncate 180 }}
+                            {{ end }}
+                        </p>
+
+                        <a href="{{ $page.RelPermalink }}" class="card-link">
+                            Read Article →
+                        </a>
+                    </div>
+                </article>
+            {{ else }}
+                <p>No posts have been published yet.</p>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="page-hero">
+    <div class="container">
+        <p class="section-label">BROWSE</p>
+        <h1>{{ .Title }}</h1>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="container">
+        <div class="content-grid">
+            {{ range .Pages.ByDate.Reverse }}
+                <article class="content-card">
+                    <div class="card-content">
+                        <p class="card-date">{{ .Date.Format "2 January 2006" }}</p>
+
+                        <h2>
+                            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                        </h2>
+
+                        <p>
+                            {{ with .Params.description }}
+                                {{ . }}
+                            {{ else }}
+                                {{ .Summary | plainify | truncate 180 }}
+                            {{ end }}
+                        </p>
+
+                        <a href="{{ .RelPermalink }}" class="card-link">View →</a>
+                    </div>
+                </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

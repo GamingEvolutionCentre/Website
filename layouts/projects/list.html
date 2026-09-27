@@ -1,0 +1,128 @@
+{{ define "main" }}
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <p class="section-label">
+            GAMING EVOLUTION CENTRE
+        </p>
+
+        <h1>{{ .Title }}</h1>
+
+        {{ with .Params.description }}
+            <p class="page-hero-description">
+                {{ . }}
+            </p>
+        {{ end }}
+
+    </div>
+
+</section>
+
+
+<section class="projects-page">
+
+    <div class="container">
+
+        <div class="projects-grid">
+
+            {{ range .Pages.ByDate.Reverse }}
+
+                <article class="project-list-card">
+
+                    {{ with .Params.image }}
+
+                        <a
+                            href="{{ $.RelPermalink }}"
+                            class="project-image-wrapper"
+                        >
+
+                            <img
+                                src="{{ . }}"
+                                alt="{{ $.Title }}"
+                                class="project-image"
+                                loading="lazy"
+                            >
+
+                        </a>
+
+                    {{ end }}
+
+
+                    <div class="project-card-content">
+
+                        <div class="project-card-header">
+
+                            {{ with .Params.status }}
+
+                                <span class="project-status">
+                                    {{ . }}
+                                </span>
+
+                            {{ end }}
+
+                        </div>
+
+
+                        <h2>
+
+                            <a href="{{ .RelPermalink }}">
+                                {{ .Title }}
+                            </a>
+
+                        </h2>
+
+
+                        {{ with .Params.description }}
+
+                            <p>
+                                {{ . }}
+                            </p>
+
+                        {{ end }}
+
+
+                        {{ with .Params.technologies }}
+
+                            <div class="technology-list">
+
+                                {{ range . }}
+
+                                    <span class="technology-badge">
+                                        {{ . }}
+                                    </span>
+
+                                {{ end }}
+
+                            </div>
+
+                        {{ end }}
+
+
+                        <a
+                            href="{{ .RelPermalink }}"
+                            class="card-link"
+                        >
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {{ else }}
+
+                <p>
+                    No projects have been published yet.
+                </p>
+
+            {{ end }}
+
+        </div>
+
+    </div>
+
+</section>
+
+{{ end }}

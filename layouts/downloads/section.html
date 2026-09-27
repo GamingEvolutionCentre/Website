@@ -1,0 +1,91 @@
+{{ define "main" }}
+
+<section class="page-hero">
+    <div class="container">
+        <p class="section-label">GAMING EVOLUTION CENTRE</p>
+        <h1>{{ .Title }}</h1>
+
+        {{ with .Params.description }}
+            <p class="page-hero-description">{{ . }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<section class="downloads-section">
+    <div class="container">
+        <div class="downloads-grid">
+            {{ range .Pages.ByTitle }}
+                {{ $page := . }}
+
+                <article class="download-card">
+                    {{ with $page.Params.image }}
+                        <a href="{{ $page.RelPermalink }}" class="download-image-wrapper">
+                            <img
+                                src="{{ . }}"
+                                alt="{{ $page.Title }}"
+                                class="download-image"
+                                loading="lazy"
+                            >
+                        </a>
+                    {{ end }}
+
+                    <div class="download-content">
+                        <div class="download-top">
+                            <div>
+                                <h2>
+                                    <a href="{{ $page.RelPermalink }}">
+                                        {{ $page.Title }}
+                                    </a>
+                                </h2>
+
+                                {{ with $page.Params.version }}
+                                    <span class="download-version">
+                                        Version: {{ . }}
+                                    </span>
+                                {{ end }}
+                            </div>
+
+                            {{ with $page.Params.status }}
+                                <span class="download-status">{{ . }}</span>
+                            {{ end }}
+                        </div>
+
+                        <p class="download-description">
+                            {{ with $page.Params.description }}
+                                {{ . }}
+                            {{ else }}
+                                {{ $page.Summary }}
+                            {{ end }}
+                        </p>
+
+                        {{ with $page.Params.platforms }}
+                            <div class="platform-list">
+                                {{ range . }}
+                                    <span class="platform-badge">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+
+                        <div class="download-actions">
+                            <a href="{{ $page.RelPermalink }}" class="button secondary">
+                                View Details
+                            </a>
+
+                            {{ with $page.Params.download_url }}
+                                <a href="{{ . }}" class="button primary">
+                                    Download
+                                </a>
+                            {{ else }}
+                                <span class="button disabled">Coming Soon</span>
+                            {{ end }}
+                        </div>
+                    </div>
+                </article>
+            {{ else }}
+                <p>There are currently no downloads available.</p>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ end }}

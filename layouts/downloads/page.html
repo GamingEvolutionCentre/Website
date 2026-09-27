@@ -1,0 +1,76 @@
+{{ define "main" }}
+
+<article class="software-page">
+    <header class="software-header">
+        <div class="container software-header-grid">
+            <div class="software-info">
+                {{ with .Params.status }}
+                    <span class="software-status">{{ . }}</span>
+                {{ end }}
+
+                <h1 data-pagefind-weight="8">{{ .Title }}</h1>
+
+                {{ with .Params.description }}
+                    <p class="software-description" data-pagefind-weight="2">
+                        {{ . }}
+                    </p>
+                {{ end }}
+
+                <div class="software-meta">
+                    {{ with .Params.version }}
+                        <div>
+                            <span class="meta-label">Version</span>
+                            <span>{{ . }}</span>
+                        </div>
+                    {{ end }}
+
+                    {{ with .Params.platforms }}
+                        <div>
+                            <span class="meta-label">Platforms</span>
+                            <span>{{ delimit . ", " }}</span>
+                        </div>
+                    {{ end }}
+                </div>
+
+                <div class="software-actions">
+                    {{ with .Params.download_url }}
+                        <a href="{{ . }}" class="button primary">Download</a>
+                    {{ else }}
+                        <span class="button disabled">Download Coming Soon</span>
+                    {{ end }}
+
+                    {{ with .Params.project_url }}
+                        <a href="{{ . }}" class="button secondary">Project Page</a>
+                    {{ end }}
+
+                    {{ with .Params.repository_url }}
+                        <a
+                            href="{{ . }}"
+                            class="button secondary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Source Code
+                        </a>
+                    {{ end }}
+                </div>
+            </div>
+
+            {{ with .Params.image }}
+                <div class="software-image">
+                    <img src="{{ . }}" alt="{{ $.Title }}">
+                </div>
+            {{ end }}
+        </div>
+    </header>
+
+    <section class="software-body">
+        <div class="article-layout">
+            <div class="article-content">
+                {{ .Content }}
+            </div>
+        </div>
+    </section>
+</article>
+
+{{ end }}

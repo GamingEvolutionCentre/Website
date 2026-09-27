@@ -1,0 +1,68 @@
+<footer class="site-footer" data-pagefind-ignore="all">
+    <div class="footer-container">
+
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="{{ site.Home.RelPermalink }}" class="footer-logo">
+                    Gaming Evolution Centre
+                </a>
+
+                <p>
+                    Gaming, software, technology and community.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Website</h3>
+
+                <nav aria-label="Footer website navigation">
+                    {{ range site.Menus.main }}
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
+                </nav>
+            </div>
+
+            <div class="footer-column">
+                <h3>Projects</h3>
+
+                <nav aria-label="Footer project navigation">
+                    {{ range first 5 (where site.RegularPages "Section" "projects") }}
+                        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                    {{ else }}
+                        <span>Coming soon</span>
+                    {{ end }}
+                </nav>
+            </div>
+
+            <div class="footer-column">
+                <h3>Community</h3>
+
+                <nav aria-label="Social links">
+                    {{ range site.Params.social }}
+                        {{ if .url }}
+                            <a
+                                href="{{ .url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {{ .name }}
+                            </a>
+                        {{ end }}
+                    {{ end }}
+                </nav>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; {{ now.Year }} Gaming Evolution Centre.
+                All rights reserved.
+            </p>
+
+            <div class="footer-legal">
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+            </div>
+        </div>
+    </div>
+</footer>

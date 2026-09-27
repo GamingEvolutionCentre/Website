@@ -1,0 +1,106 @@
+<div
+    class="search-overlay"
+    id="search-overlay"
+    hidden
+    data-pagefind-ignore="all"
+>
+    <div class="search-backdrop" data-search-close></div>
+
+    <section
+        class="search-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="search-title"
+    >
+        <header class="search-header">
+            <div>
+                <p class="search-label">GAMING EVOLUTION CENTRE</p>
+                <h2 id="search-title">Search</h2>
+            </div>
+
+            <button
+                type="button"
+                class="search-close"
+                data-search-close
+                aria-label="Close search"
+            >
+                ×
+            </button>
+        </header>
+
+        <div class="search-input-container">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+
+            <input
+                type="search"
+                id="search-input"
+                class="search-input"
+                placeholder="Ask for a post, project, download, technology..."
+                autocomplete="off"
+                spellcheck="true"
+                aria-label="Search Gaming Evolution Centre"
+            >
+
+            <kbd>ESC</kbd>
+        </div>
+
+        <div
+            class="search-filters"
+            id="search-filters"
+            aria-label="Search type"
+        >
+            <button type="button" class="search-filter active" data-search-type="All">
+                All
+            </button>
+
+            <button type="button" class="search-filter" data-search-type="Post">
+                Posts
+            </button>
+
+            <button type="button" class="search-filter" data-search-type="Project">
+                Projects
+            </button>
+
+            <button type="button" class="search-filter" data-search-type="Download">
+                Downloads
+            </button>
+
+            <button type="button" class="search-filter" data-search-type="Page">
+                Pages
+            </button>
+        </div>
+
+        <div class="search-summary" id="search-summary">
+            <span>
+                Search by title, description, technology, platform, tag or natural phrase.
+            </span>
+        </div>
+
+        <div
+            class="search-results"
+            id="search-results"
+            aria-live="polite"
+        ></div>
+
+        <div
+            class="search-more-container"
+            id="search-more-container"
+            hidden
+        >
+            <button
+                type="button"
+                class="button secondary"
+                id="search-more"
+            >
+                Show More
+            </button>
+        </div>
+
+        <footer class="search-footer">
+            <span>↑ ↓ Navigate</span>
+            <span>Enter Open</span>
+            <span>Esc Close</span>
+            <span>/ Search</span>
+        </footer>
+    </section>
+</div>

@@ -1,0 +1,55 @@
+<header class="site-header" data-pagefind-ignore="all">
+    <div class="nav-container">
+
+        <a class="site-logo" href="{{ site.Home.RelPermalink }}">
+            Gaming Evolution Centre
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobile-menu-button"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="main-navigation"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav
+            class="main-nav"
+            id="main-navigation"
+            aria-label="Main navigation"
+        >
+            {{ range site.Menus.main }}
+                {{ $active := false }}
+
+                {{ if $.IsMenuCurrent "main" . }}
+                    {{ $active = true }}
+                {{ else if $.HasMenuCurrent "main" . }}
+                    {{ $active = true }}
+                {{ end }}
+
+                <a
+                    href="{{ .URL }}"
+                    {{ if $active }}class="active" aria-current="page"{{ end }}
+                >
+                    {{ .Name }}
+                </a>
+            {{ end }}
+
+            <button
+                type="button"
+                class="header-search-button"
+                id="search-open"
+                aria-haspopup="dialog"
+                aria-controls="search-overlay"
+            >
+                <span>Search</span>
+                <kbd>Ctrl K</kbd>
+            </button>
+        </nav>
+    </div>
+</header>

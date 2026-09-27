@@ -1,0 +1,191 @@
+{{ define "main" }}
+
+<section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <div class="hero-content">
+        <p class="hero-label">GAMING • SOFTWARE • TECHNOLOGY</p>
+
+        <h1 data-pagefind-weight="8">
+            Gaming Evolution Centre
+        </h1>
+
+        <p class="hero-description" data-pagefind-weight="2">
+            Gaming, software, technology and community.
+            Explore our projects, downloads, guides and updates.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="/downloads/" class="button primary">Explore Downloads</a>
+            <a href="/projects/" class="button secondary">View Projects</a>
+        </div>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <p class="section-label">NEWS & UPDATES</p>
+                <h2>Latest Posts</h2>
+            </div>
+
+            <a href="/posts/" class="section-link">View all →</a>
+        </div>
+
+        <div class="content-grid">
+            {{ range first 3 (where site.RegularPages "Section" "posts") }}
+                {{ $page := . }}
+
+                <article class="content-card">
+                    {{ with $page.Params.image }}
+                        <a href="{{ $page.RelPermalink }}" class="card-image-wrapper">
+                            <img
+                                class="card-image"
+                                src="{{ . }}"
+                                alt="{{ $page.Title }}"
+                                loading="lazy"
+                            >
+                        </a>
+                    {{ end }}
+
+                    <div class="card-content">
+                        <div class="card-meta">
+                            {{ with $page.Params.categories }}
+                                <span class="card-category">{{ index . 0 }}</span>
+                            {{ end }}
+
+                            <span>{{ $page.Date.Format "2 January 2006" }}</span>
+                        </div>
+
+                        <h3>
+                            <a href="{{ $page.RelPermalink }}">
+                                {{ $page.LinkTitle }}
+                            </a>
+                        </h3>
+
+                        <p>
+                            {{ with $page.Params.description }}
+                                {{ . }}
+                            {{ else }}
+                                {{ $page.Summary | plainify | truncate 150 }}
+                            {{ end }}
+                        </p>
+
+                        <a href="{{ $page.RelPermalink }}" class="card-link">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+            {{ else }}
+                <article class="content-card">
+                    <div class="card-content">
+                        <h3>No posts yet</h3>
+                        <p>News and updates will appear here.</p>
+                    </div>
+                </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="home-section alternate-section">
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <p class="section-label">DEVELOPMENT</p>
+                <h2>Featured Projects</h2>
+            </div>
+
+            <a href="/projects/" class="section-link">View all →</a>
+        </div>
+
+        {{ $projects := where site.RegularPages "Section" "projects" }}
+        {{ $featured := where $projects ".Params.featured" true }}
+
+        <div class="content-grid">
+            {{ range first 3 $featured }}
+                {{ $page := . }}
+
+                <article class="content-card project-card">
+                    {{ with $page.Params.image }}
+                        <a href="{{ $page.RelPermalink }}" class="card-image-wrapper">
+                            <img
+                                src="{{ . }}"
+                                alt="{{ $page.Title }}"
+                                class="card-image"
+                                loading="lazy"
+                            >
+                        </a>
+                    {{ end }}
+
+                    <div class="card-content">
+                        <div class="card-meta">
+                            {{ with $page.Params.status }}
+                                <span class="card-category">{{ . }}</span>
+                            {{ end }}
+                        </div>
+
+                        <h3>
+                            <a href="{{ $page.RelPermalink }}">
+                                {{ $page.LinkTitle }}
+                            </a>
+                        </h3>
+
+                        <p>{{ $page.Params.description }}</p>
+
+                        <a href="{{ $page.RelPermalink }}" class="card-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+            {{ else }}
+                <article class="content-card">
+                    <div class="card-content">
+                        <h3>Projects coming soon</h3>
+                        <p>Gaming Evolution Centre projects will appear here.</p>
+                    </div>
+                </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="container">
+        <div class="feature-banner">
+            <div>
+                <p class="section-label">SOFTWARE</p>
+                <h2>Gaming Evolution Centre Downloads</h2>
+                <p>
+                    Download Gaming Evolution Centre applications,
+                    tools and software.
+                </p>
+            </div>
+
+            <a href="/downloads/" class="button primary">
+                View Downloads
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="community-section">
+    <div class="container community-content">
+        <p class="section-label">COMMUNITY</p>
+
+        <h2>Join Gaming Evolution Centre</h2>
+
+        <p>
+            Follow our projects, gaming content,
+            software development and community updates.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="/support/" class="button primary">Community</a>
+            <a href="/about/" class="button secondary">Learn More</a>
+        </div>
+    </div>
+</section>
+
+{{ end }}

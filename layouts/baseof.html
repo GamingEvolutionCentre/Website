@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default "en-gb" }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+
+<body>
+    {{ partial "header.html" . }}
+
+    <main id="main-content" data-pagefind-body>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+    {{ partial "search.html" . }}
+    {{ partial "scripts.html" . }}
+</body>
+</html>

@@ -1,0 +1,145 @@
+{{ define "main" }}
+
+<article class="project-page">
+    <header class="project-header">
+        <div class="container project-header-grid">
+            <div class="project-header-content">
+                {{ with .Params.status }}
+                    <span class="project-status">{{ . }}</span>
+                {{ end }}
+
+                <h1 data-pagefind-weight="8">{{ .Title }}</h1>
+
+                {{ with .Params.description }}
+                    <p class="project-description" data-pagefind-weight="2">
+                        {{ . }}
+                    </p>
+                {{ end }}
+
+                {{ with .Params.technologies }}
+                    <div class="technology-list">
+                        {{ range . }}
+                            <span class="technology-badge">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                {{ end }}
+
+                <div class="project-actions">
+                    {{ with .Params.download_url }}
+                        <a href="{{ . }}" class="button primary">Downloads</a>
+                    {{ end }}
+
+                    {{ with .Params.repository_url }}
+                        <a
+                            href="{{ . }}"
+                            class="button secondary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Source Code
+                        </a>
+                    {{ end }}
+                </div>
+            </div>
+
+            {{ with .Params.image }}
+                <div class="project-hero-image">
+                    <img src="{{ . }}" alt="{{ $.Title }}">
+                </div>
+            {{ end }}
+        </div>
+    </header>
+
+    <section class="project-details">
+        <div class="container project-information">
+            <div class="project-main-content">
+                <div class="article-content">
+                    {{ .Content }}
+                </div>
+            </div>
+
+            <aside class="project-sidebar" data-pagefind-ignore>
+                <div class="project-sidebar-card">
+                    <h3>Project Information</h3>
+
+                    {{ with .Params.status }}
+                        <div class="project-info-item">
+                            <span>Status</span>
+                            <strong>{{ . }}</strong>
+                        </div>
+                    {{ end }}
+
+                    {{ with .Params.platforms }}
+                        <div class="project-info-item">
+                            <span>Platforms</span>
+                            <strong>{{ delimit . ", " }}</strong>
+                        </div>
+                    {{ end }}
+
+                    {{ with .Params.technologies }}
+                        <div class="project-info-item">
+                            <span>Technologies</span>
+                            <strong>{{ delimit . ", " }}</strong>
+                        </div>
+                    {{ end }}
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    {{ with .Params.tags }}
+        <section class="project-tags">
+            <div class="container">
+                <div class="tag-list">
+                    {{ range . }}
+                        <a
+                            href="{{ "/tags/" | relURL }}{{ . | urlize }}/"
+                            class="tag"
+                        >
+                            {{ . }}
+                        </a>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+    {{ end }}
+
+    {{ $projectSlug := .File.ContentBaseName }}
+    {{ $postPages := where site.RegularPages "Section" "posts" }}
+    {{ $projectPosts := where $postPages ".Params.project" $projectSlug }}
+
+    {{ if $projectPosts }}
+        <section class="project-updates">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">DEVELOPMENT</p>
+                        <h2>Latest {{ .Title }} Updates</h2>
+                    </div>
+                </div>
+
+                <div class="content-grid">
+                    {{ range first 3 $projectPosts.ByDate.Reverse }}
+                        <article class="content-card">
+                            <div class="card-content">
+                                <p class="card-date">{{ .Date.Format "2 January 2006" }}</p>
+
+                                <h3>
+                                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                </h3>
+
+                                <p>{{ .Params.description }}</p>
+
+                                <a href="{{ .RelPermalink }}" class="card-link">
+                                    Read Update →
+                                </a>
+                            </div>
+                        </article>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+    {{ end }}
+</article>
+
+{{ end }}

@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+<article class="article">
+    <header class="article-header">
+        <div class="article-header-content">
+            {{ with .Params.categories }}
+                <span class="article-category">{{ index . 0 }}</span>
+            {{ end }}
+
+            <h1 data-pagefind-weight="8">{{ .Title }}</h1>
+
+            {{ with .Params.description }}
+                <p class="article-description" data-pagefind-weight="2">
+                    {{ . }}
+                </p>
+            {{ end }}
+
+            <div class="article-meta">
+                <span>{{ .Date.Format "2 January 2006" }}</span>
+                <span>•</span>
+                <span>{{ .ReadingTime }} min read</span>
+                <span>•</span>
+                <span>{{ .WordCount }} words</span>
+            </div>
+        </div>
+    </header>
+
+    {{ with .Params.image }}
+        <div class="article-featured-image">
+            <img src="{{ . }}" alt="{{ $.Title }}">
+        </div>
+    {{ end }}
+
+    <div class="article-layout">
+        <div class="article-content">
+            {{ .Content }}
+        </div>
+    </div>
+
+    {{ with .Params.tags }}
+        <div class="article-tags">
+            <div class="container article-narrow">
+                <span class="tags-title">Tags</span>
+
+                <div class="tag-list">
+                    {{ range . }}
+                        <a
+                            href="{{ "/tags/" | relURL }}{{ . | urlize }}/"
+                            class="tag"
+                        >
+                            {{ . }}
+                        </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    {{ end }}
+
+    <div class="article-navigation">
+        <div class="container article-navigation-grid">
+            <div>
+                {{ with .PrevInSection }}
+                    <p class="article-nav-label">Previous</p>
+                    <a href="{{ .RelPermalink }}">← {{ .LinkTitle }}</a>
+                {{ end }}
+            </div>
+
+            <div class="article-nav-next">
+                {{ with .NextInSection }}
+                    <p class="article-nav-label">Next</p>
+                    <a href="{{ .RelPermalink }}">{{ .LinkTitle }} →</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</article>
+
+{{ end }}

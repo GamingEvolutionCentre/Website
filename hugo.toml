@@ -1,0 +1,92 @@
+baseURL = "https://gamingevolutioncentre.pages.dev/"
+languageCode = "en-gb"
+title = "Gaming Evolution Centre"
+
+enableRobotsTXT = true
+
+[pagination]
+pagerSize = 10
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[params]
+description = "Gaming, software, technology and community."
+author = "Gaming Evolution Centre"
+defaultTheme = "dark"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 20
+
+[[menu.main]]
+name = "Projects"
+url = "/projects/"
+weight = 30
+
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 40
+
+[[menu.main]]
+name = "Downloads"
+url = "/downloads/"
+weight = 50
+
+[[menu.main]]
+name = "Store"
+url = "/store/"
+weight = 60
+
+[[menu.main]]
+name = "Support"
+url = "/support/"
+weight = 70
+
+# Add your real URLs later. Empty URLs are not displayed in the footer.
+[[params.social]]
+name = "GitHub"
+url = ""
+
+[[params.social]]
+name = "Twitch"
+url = ""
+
+[[params.social]]
+name = "YouTube"
+url = ""
+
+[[params.social]]
+name = "Facebook"
+url = ""
+
+[[params.social]]
+name = "X"
+url = ""
+
+[[params.social]]
+name = "Instagram"
+url = ""
+
+[[params.social]]
+name = "Threads"
+url = ""
+
+[[params.social]]
+name = "Bluesky"
+url = ""
+
+[[params.social]]
+name = "Patreon"
+url = ""

@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="page-hero">
+    <div class="container">
+        <p class="section-label">BROWSE</p>
+        <h1>{{ .Title }}</h1>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="container">
+        <div class="content-grid">
+            {{ range .Data.Terms.ByCount }}
+                <article class="content-card">
+                    <div class="card-content">
+                        <h2>
+                            <a href="{{ .Page.RelPermalink }}">
+                                {{ .Page.LinkTitle }}
+                            </a>
+                        </h2>
+                        <p>{{ .Count }} item{{ if ne .Count 1 }}s{{ end }}</p>
+                    </div>
+                </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

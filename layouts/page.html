@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="page-hero">
+    <div class="container">
+        <p class="section-label">GAMING EVOLUTION CENTRE</p>
+        <h1 data-pagefind-weight="8">{{ .Title }}</h1>
+
+        {{ with .Params.description }}
+            <p class="page-hero-description" data-pagefind-weight="2">
+                {{ . }}
+            </p>
+        {{ end }}
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="article-layout">
+        <article class="article-content">
+            {{ .Content }}
+        </article>
+    </div>
+</section>
+{{ end }}

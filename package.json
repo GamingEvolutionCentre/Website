@@ -1,0 +1,15 @@
+{
+  "name": "gaming-evolution-centre-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Gaming Evolution Centre Hugo website",
+  "scripts": {
+    "dev": "hugo server",
+    "build": "hugo --gc --minify && pagefind --site public",
+    "preview": "hugo --gc --minify && pagefind --site public --serve",
+    "search:index": "pagefind --site public"
+  },
+  "devDependencies": {
+    "pagefind": "1.5.2"
+  }
+}

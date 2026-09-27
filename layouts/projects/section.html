@@ -1,0 +1,65 @@
+{{ define "main" }}
+
+<section class="page-hero">
+    <div class="container">
+        <p class="section-label">GAMING EVOLUTION CENTRE</p>
+        <h1>{{ .Title }}</h1>
+
+        {{ with .Params.description }}
+            <p class="page-hero-description">{{ . }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<section class="projects-page">
+    <div class="container">
+        <div class="projects-grid">
+            {{ range .Pages.ByDate.Reverse }}
+                {{ $page := . }}
+
+                <article class="project-list-card">
+                    {{ with $page.Params.image }}
+                        <a href="{{ $page.RelPermalink }}" class="project-image-wrapper">
+                            <img
+                                src="{{ . }}"
+                                alt="{{ $page.Title }}"
+                                class="project-image"
+                                loading="lazy"
+                            >
+                        </a>
+                    {{ end }}
+
+                    <div class="project-card-content">
+                        {{ with $page.Params.status }}
+                            <span class="project-status">{{ . }}</span>
+                        {{ end }}
+
+                        <h2>
+                            <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+                        </h2>
+
+                        {{ with $page.Params.description }}
+                            <p>{{ . }}</p>
+                        {{ end }}
+
+                        {{ with $page.Params.technologies }}
+                            <div class="technology-list">
+                                {{ range . }}
+                                    <span class="technology-badge">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+
+                        <a href="{{ $page.RelPermalink }}" class="card-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+            {{ else }}
+                <p>No projects have been published yet.</p>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ end }}
