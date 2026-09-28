@@ -1,218 +1,509 @@
 /* =========================================================
-   OLD WEBSITE STYLE
-   ---------------------------------------------------------
-   Layout / typography / spacing only.
-
-   Light or Dark colours come from _theme.scss.
+   OLD
+   Pre-Astro Chris Titus Hugo-era-inspired presentation.
+   COLOURS come from _theme.scss.
    ========================================================= */
 
-html[data-site-style="old"] {
 
-    body {
-        font-family:
-            "PT Sans",
-            "Segoe UI",
-            Arial,
-            sans-serif;
-    }
+/* =========================================================
+   Site shell while Old is selected
+   ========================================================= */
 
-
-    .container,
-    .footer-container,
-    .page-container,
-    .nav-container {
-        max-width: 1140px;
-    }
+html[data-site-style="old"] body {
+    font-family:
+        "PT Sans",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
 
 
-    .site-header {
-        backdrop-filter: none;
-    }
+html[data-site-style="old"] .nav-container {
+    max-width: 1140px;
+    min-height: 64px;
+}
 
 
-    .nav-container {
-        min-height: 64px;
-    }
+html[data-site-style="old"] .site-header {
+    backdrop-filter: none;
+}
 
 
-    .site-logo {
-        font-size: 1.15rem;
-        letter-spacing: 0;
-    }
+html[data-site-style="old"] .site-logo {
+    font-size: 1.12rem;
+    letter-spacing: 0;
+}
 
 
-    .main-nav {
-        gap: 18px;
-    }
+html[data-site-style="old"] .main-nav {
+    gap: 17px;
+}
 
 
-    .main-nav > a {
-        font-size: 0.92rem;
-        font-weight: 600;
-    }
+html[data-site-style="old"] .main-nav > a {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
 
 
-    .main-nav > a::after {
-        bottom: -6px;
-    }
+html[data-site-style="old"] .header-search-button {
+    border-radius: 3px;
+}
 
 
-    .header-search-button,
-    .theme-toggle {
-        border-radius: 4px;
-    }
+html[data-site-style="old"] .old-container {
+    width: calc(100% - 48px);
+    max-width: 1140px;
+    margin: 0 auto;
+}
 
 
-    .hero {
-        min-height: auto;
+/* =========================================================
+   Old hero
+   ========================================================= */
 
-        padding:
-            70px
-            24px;
+.old-hero {
+    padding:
+        84px
+        0
+        92px;
 
-        text-align: center;
-    }
+    text-align: center;
 
+    background:
+        linear-gradient(
+            135deg,
+            var(--gec-hero-start) 0%,
+            var(--gec-hero-mid) 56%,
+            var(--gec-hero-end) 100%
+        );
 
-    .hero-glow {
-        display: none;
-    }
-
-
-    .hero h1 {
-        margin-bottom: 20px;
-
-        font-family:
-            "PT Sans",
-            Arial,
-            sans-serif;
-
-        font-size:
-            clamp(
-                2.8rem,
-                6vw,
-                5rem
-            );
-
-        line-height: 1.05;
-
-        letter-spacing:
-            -0.03em;
-    }
+    border-bottom:
+        1px solid
+        var(--gec-border);
+}
 
 
-    .button {
-        border-radius: 4px;
-    }
+.old-eyebrow {
+    margin:
+        0
+        0
+        12px;
+
+    color: var(--gec-text-soft);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+}
 
 
-    .home-section {
-        padding:
-            56px
-            0;
-    }
+.old-hero h1 {
+    margin:
+        0
+        0
+        22px;
+
+    color: var(--gec-text);
+
+    font-size:
+        clamp(
+            3rem,
+            7vw,
+            5.6rem
+        );
+
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
 
 
-    .section-heading {
-        padding-bottom: 14px;
+.old-hero > .old-container > p:not(.old-eyebrow) {
+    max-width: 720px;
 
-        border-bottom:
-            1px solid
-            var(--gec-border);
-    }
+    margin:
+        0
+        auto
+        31px;
 
+    color: var(--gec-text-soft);
 
-    .section-heading h2,
-    .page-hero h1,
-    .article-header h1,
-    .article-content h2,
-    .article-content h3,
-    .project-header-content h1,
-    .software-info h1 {
-        font-family:
-            "PT Sans",
-            Arial,
-            sans-serif;
-    }
+    font-size: 1.08rem;
+    line-height: 1.65;
+}
 
 
-    .content-grid {
-        gap: 24px;
-    }
+.old-hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
 
-    .content-card,
-    .project-list-card,
-    .download-card {
-        border-radius: 4px;
-    }
+.old-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding:
+        10px
+        18px;
+
+    border:
+        1px solid
+        var(--gec-border-strong);
+
+    border-radius: 3px;
+
+    text-decoration: none;
+    font-weight: 750;
+}
 
 
-    .content-card:hover,
-    .project-list-card:hover,
-    .download-card:hover {
-        transform: none;
-    }
+.old-button-primary {
+    background: var(--gec-accent);
+    color: var(--gec-accent-text);
+}
 
 
-    .card-category,
-    .article-category,
-    .project-status,
-    .download-status,
-    .software-status,
-    .technology-badge,
-    .platform-badge,
-    .tag {
-        border-radius: 3px;
-    }
+.old-button-secondary {
+    background: rgba(0, 0, 0, 0.08);
+    color: var(--gec-text);
+}
 
 
-    .feature-banner {
-        border-radius: 4px;
-    }
+/* =========================================================
+   Old sections
+   ========================================================= */
+
+.old-section {
+    padding:
+        66px
+        0;
+}
 
 
-    .page-hero {
-        padding:
-            70px
-            0
-            45px;
+.old-section-alt {
+    background: var(--gec-surface-2);
 
-        text-align: center;
-    }
+    border-top:
+        1px solid
+        var(--gec-border);
 
-
-    .article-header {
-        padding-top: 70px;
-        text-align: center;
-    }
+    border-bottom:
+        1px solid
+        var(--gec-border);
+}
 
 
-    .article-meta {
-        justify-content:
-            center;
-    }
+.old-section-title {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 28px;
+
+    padding-bottom: 14px;
+
+    border-bottom:
+        1px solid
+        var(--gec-border);
+}
 
 
-    .project-hero-image,
-    .software-image,
-    .article-featured-image {
-        border-radius: 4px;
-    }
+.old-section-title h2 {
+    margin: 0;
+
+    font-size: 2.05rem;
+}
 
 
-    .project-sidebar-card {
-        border-radius: 4px;
-    }
+.old-section-title > a {
+    color: var(--gec-text-soft);
+
+    text-decoration: none;
+    font-weight: 700;
+}
 
 
-    /*
-     * Old-style pages keep the more conventional
-     * card/grid presentation rather than the flat
-     * editorial Modern layout.
-     */
+/* =========================================================
+   Old cards
+   ========================================================= */
 
-    .featured-layout {
+.old-post-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 22px;
+}
+
+
+.old-card {
+    overflow: hidden;
+
+    background: var(--gec-surface);
+
+    border:
+        1px solid
+        var(--gec-border);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0
+        9px
+        24px
+        var(--gec-shadow);
+}
+
+
+.old-card-image {
+    display: block;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: var(--gec-surface-2);
+}
+
+
+.old-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.old-card-body {
+    padding: 22px;
+}
+
+
+.old-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin-bottom: 12px;
+
+    color: var(--gec-muted);
+
+    font-size: 0.75rem;
+}
+
+
+.old-card h3 {
+    margin:
+        0
+        0
+        12px;
+
+    font-size: 1.35rem;
+    line-height: 1.25;
+}
+
+
+.old-card h3 a,
+.old-wide-card h3 a,
+.old-download-row h3 a {
+    color: var(--gec-text);
+    text-decoration: none;
+}
+
+
+.old-card p,
+.old-wide-card p,
+.old-download-row p {
+    color: var(--gec-text-soft);
+    line-height: 1.6;
+}
+
+
+.old-read-more {
+    color: var(--gec-link);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+
+.old-project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 22px;
+}
+
+
+.old-wide-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-height: 240px;
+
+    padding: 28px;
+
+    background: var(--gec-surface);
+
+    border:
+        1px solid
+        var(--gec-border);
+
+    border-radius: 4px;
+}
+
+
+.old-wide-card h3 {
+    margin:
+        0
+        0
+        12px;
+
+    font-size: 1.65rem;
+}
+
+
+.old-wide-card .old-button {
+    margin-top: auto;
+}
+
+
+.old-download-list {
+    border:
+        1px solid
+        var(--gec-border);
+
+    border-radius: 4px;
+
+    overflow: hidden;
+}
+
+
+.old-download-row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 24px;
+
+    background: var(--gec-surface);
+
+    border-bottom:
+        1px solid
+        var(--gec-border);
+}
+
+
+.old-download-row:last-child {
+    border-bottom: 0;
+}
+
+
+.old-download-row h3 {
+    margin:
+        0
+        0
+        6px;
+
+    font-size: 1.25rem;
+}
+
+
+.old-download-row p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   Other pages in Old
+   ========================================================= */
+
+html[data-site-style="old"]
+.page-hero {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gec-hero-start),
+            var(--gec-hero-mid)
+        );
+}
+
+
+html[data-site-style="old"]
+.content-card,
+html[data-site-style="old"]
+.project-list-card,
+html[data-site-style="old"]
+.download-card,
+html[data-site-style="old"]
+.project-sidebar-card {
+    background: var(--gec-surface);
+
+    border-color: var(--gec-border);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0
+        8px
+        22px
+        var(--gec-shadow);
+}
+
+
+html[data-site-style="old"]
+.card-category,
+html[data-site-style="old"]
+.article-category,
+html[data-site-style="old"]
+.project-status,
+html[data-site-style="old"]
+.download-status,
+html[data-site-style="old"]
+.software-status,
+html[data-site-style="old"]
+.technology-badge,
+html[data-site-style="old"]
+.platform-badge,
+html[data-site-style="old"]
+.tag {
+    border-radius: 3px;
+}
+
+
+/* =========================================================
+   Responsive Old
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .old-post-grid {
         grid-template-columns:
             repeat(
                 2,
@@ -220,34 +511,38 @@ html[data-site-style="old"] {
             );
     }
 
-
-    .article-row {
-        grid-template-columns:
-            130px
-            1fr;
-    }
-
-
-    .creator-hub-card {
-        border-radius: 3px;
-    }
-
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
     html[data-site-style="old"]
-    .featured-layout {
+    .old-container {
+        width: calc(100% - 32px);
+    }
+
+
+    .old-post-grid,
+    .old-project-grid {
         grid-template-columns:
             1fr;
     }
 
 
-    html[data-site-style="old"]
-    .article-row {
+    .old-section-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .old-download-row {
         grid-template-columns:
             1fr;
+    }
+
+
+    .old-download-row .old-button {
+        justify-self: start;
     }
 
 }

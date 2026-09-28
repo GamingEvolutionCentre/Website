@@ -1,191 +1,796 @@
 {{ define "main" }}
 
-<section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
+{{ $posts := where site.RegularPages "Section" "posts" }}
+{{ $posts = $posts.ByDate.Reverse }}
 
-    <div class="hero-content">
-        <p class="hero-label">GAMING • SOFTWARE • TECHNOLOGY</p>
+{{ $featured := first 3 $posts }}
+{{ $latest := first 8 $posts }}
 
-        <h1 data-pagefind-weight="8">
-            Gaming Evolution Centre
-        </h1>
+{{ $projects := where site.RegularPages "Section" "projects" }}
+{{ $projects = $projects.ByDate.Reverse }}
 
-        <p class="hero-description" data-pagefind-weight="2">
-            Gaming, software, technology and community.
-            Explore our projects, downloads, guides and updates.
-        </p>
+{{ $downloads := where site.RegularPages "Section" "downloads" }}
+{{ $downloads = $downloads.ByDate.Reverse }}
 
-        <div class="hero-buttons">
-            <a href="/downloads/" class="button primary">Explore Downloads</a>
-            <a href="/projects/" class="button secondary">View Projects</a>
+
+<!-- ======================================================
+     MODERN
+     Current Chris Titus Astro-inspired editorial layout.
+     This is the indexed homepage version.
+     ====================================================== -->
+
+<div class="home-style home-modern">
+
+    <section class="modern-hero">
+
+        <div class="modern-shell">
+
+            <p class="modern-kicker">
+                Gaming • Software • Technology
+            </p>
+
+            <h1>
+                Make gaming and technology work for you.
+            </h1>
+
+            <p class="modern-hero-copy">
+                Practical gaming, software, Linux, development,
+                downloads and technology guides from
+                Gaming Evolution Centre.
+            </p>
+
         </div>
-    </div>
-</section>
 
-<section class="home-section">
-    <div class="container">
-        <div class="section-heading">
-            <div>
-                <p class="section-label">NEWS & UPDATES</p>
-                <h2>Latest Posts</h2>
+    </section>
+
+
+    <section class="modern-section modern-featured">
+
+        <div class="modern-shell">
+
+            <div class="modern-section-heading">
+                <h2>Featured</h2>
             </div>
 
-            <a href="/posts/" class="section-link">View all →</a>
-        </div>
+            {{ if $featured }}
 
-        <div class="content-grid">
-            {{ range first 3 (where site.RegularPages "Section" "posts") }}
-                {{ $page := . }}
+                <div class="modern-featured-grid">
 
-                <article class="content-card">
-                    {{ with $page.Params.image }}
-                        <a href="{{ $page.RelPermalink }}" class="card-image-wrapper">
-                            <img
-                                class="card-image"
-                                src="{{ . }}"
-                                alt="{{ $page.Title }}"
-                                loading="lazy"
-                            >
-                        </a>
-                    {{ end }}
+                    {{ range first 1 $featured }}
 
-                    <div class="card-content">
-                        <div class="card-meta">
-                            {{ with $page.Params.categories }}
-                                <span class="card-category">{{ index . 0 }}</span>
+                        <article class="modern-featured-main">
+
+                            {{ with .Params.image }}
+
+                                <a
+                                    class="modern-featured-image"
+                                    href="{{ $.RelPermalink }}"
+                                >
+                                    <img
+                                        src="{{ . | relURL }}"
+                                        alt=""
+                                        loading="eager"
+                                    >
+                                </a>
+
                             {{ end }}
 
-                            <span>{{ $page.Date.Format "2 January 2006" }}</span>
-                        </div>
+                            <p class="modern-date">
+                                {{ .Date.Format "2 January 2006" }}
+                            </p>
 
-                        <h3>
-                            <a href="{{ $page.RelPermalink }}">
-                                {{ $page.LinkTitle }}
-                            </a>
-                        </h3>
+                            <h3>
+                                <a href="{{ .RelPermalink }}">
+                                    {{ .Title }}
+                                </a>
+                            </h3>
 
-                        <p>
-                            {{ with $page.Params.description }}
-                                {{ . }}
+                            {{ with .Description }}
+                                <p class="modern-summary">
+                                    {{ . }}
+                                </p>
                             {{ else }}
-                                {{ $page.Summary | plainify | truncate 150 }}
+                                <p class="modern-summary">
+                                    {{ .Summary | plainify | truncate 190 }}
+                                </p>
                             {{ end }}
-                        </p>
 
-                        <a href="{{ $page.RelPermalink }}" class="card-link">
-                            Read More →
-                        </a>
-                    </div>
-                </article>
-            {{ else }}
-                <article class="content-card">
-                    <div class="card-content">
-                        <h3>No posts yet</h3>
-                        <p>News and updates will appear here.</p>
-                    </div>
-                </article>
-            {{ end }}
-        </div>
-    </div>
-</section>
+                            {{ with .Params.categories }}
 
-<section class="home-section alternate-section">
-    <div class="container">
-        <div class="section-heading">
-            <div>
-                <p class="section-label">DEVELOPMENT</p>
-                <h2>Featured Projects</h2>
-            </div>
+                                <div class="modern-tags">
 
-            <a href="/projects/" class="section-link">View all →</a>
-        </div>
+                                    {{ range . }}
+                                        <span>{{ . }}</span>
+                                    {{ end }}
 
-        {{ $projects := where site.RegularPages "Section" "projects" }}
-        {{ $featured := where $projects ".Params.featured" true }}
+                                </div>
 
-        <div class="content-grid">
-            {{ range first 3 $featured }}
-                {{ $page := . }}
+                            {{ end }}
 
-                <article class="content-card project-card">
-                    {{ with $page.Params.image }}
-                        <a href="{{ $page.RelPermalink }}" class="card-image-wrapper">
-                            <img
-                                src="{{ . }}"
-                                alt="{{ $page.Title }}"
-                                class="card-image"
-                                loading="lazy"
-                            >
-                        </a>
+                        </article>
+
                     {{ end }}
 
-                    <div class="card-content">
-                        <div class="card-meta">
-                            {{ with $page.Params.status }}
-                                <span class="card-category">{{ . }}</span>
-                            {{ end }}
-                        </div>
 
-                        <h3>
-                            <a href="{{ $page.RelPermalink }}">
-                                {{ $page.LinkTitle }}
-                            </a>
-                        </h3>
+                    <div class="modern-featured-side">
 
-                        <p>{{ $page.Params.description }}</p>
+                        {{ range after 1 $featured }}
 
-                        <a href="{{ $page.RelPermalink }}" class="card-link">
-                            View Project →
-                        </a>
+                            <article class="modern-featured-small">
+
+                                <p class="modern-date">
+                                    {{ .Date.Format "2 January 2006" }}
+                                </p>
+
+                                <h3>
+                                    <a href="{{ .RelPermalink }}">
+                                        {{ .Title }}
+                                    </a>
+                                </h3>
+
+                                {{ with .Description }}
+                                    <p class="modern-summary">
+                                        {{ . }}
+                                    </p>
+                                {{ else }}
+                                    <p class="modern-summary">
+                                        {{ .Summary | plainify | truncate 135 }}
+                                    </p>
+                                {{ end }}
+
+                                {{ with .Params.categories }}
+
+                                    <div class="modern-tags">
+
+                                        {{ range first 3 . }}
+                                            <span>{{ . }}</span>
+                                        {{ end }}
+
+                                    </div>
+
+                                {{ end }}
+
+                            </article>
+
+                        {{ end }}
+
                     </div>
-                </article>
+
+                </div>
+
             {{ else }}
-                <article class="content-card">
-                    <div class="card-content">
-                        <h3>Projects coming soon</h3>
-                        <p>Gaming Evolution Centre projects will appear here.</p>
-                    </div>
-                </article>
-            {{ end }}
-        </div>
-    </div>
-</section>
 
-<section class="home-section">
-    <div class="container">
-        <div class="feature-banner">
-            <div>
-                <p class="section-label">SOFTWARE</p>
-                <h2>Gaming Evolution Centre Downloads</h2>
-                <p>
-                    Download Gaming Evolution Centre applications,
-                    tools and software.
+                <p class="modern-empty">
+                    Your featured posts will appear here.
                 </p>
+
+            {{ end }}
+
+        </div>
+
+    </section>
+
+
+    <section class="modern-section modern-latest">
+
+        <div class="modern-shell">
+
+            <div class="modern-section-heading modern-heading-with-link">
+
+                <h2>Latest articles</h2>
+
+                <a href="{{ "/posts/" | relURL }}">
+                    Browse all articles →
+                </a>
+
             </div>
 
-            <a href="/downloads/" class="button primary">
-                View Downloads
-            </a>
+            <div class="modern-article-list">
+
+                {{ range $latest }}
+
+                    <article class="modern-article-row">
+
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">
+                            {{ .Date.Format "2 January 2006" }}
+                        </time>
+
+                        <div class="modern-article-body">
+
+                            <h3>
+                                <a href="{{ .RelPermalink }}">
+                                    {{ .Title }}
+                                </a>
+                            </h3>
+
+                            {{ with .Description }}
+                                <p>{{ . }}</p>
+                            {{ else }}
+                                <p>
+                                    {{ .Summary | plainify | truncate 180 }}
+                                </p>
+                            {{ end }}
+
+                            {{ with .Params.categories }}
+
+                                <div class="modern-tags">
+
+                                    {{ range first 3 . }}
+                                        <span>{{ . }}</span>
+                                    {{ end }}
+
+                                </div>
+
+                            {{ end }}
+
+                        </div>
+
+                    </article>
+
+                {{ end }}
+
+            </div>
+
         </div>
-    </div>
-</section>
 
-<section class="community-section">
-    <div class="container community-content">
-        <p class="section-label">COMMUNITY</p>
+    </section>
 
-        <h2>Join Gaming Evolution Centre</h2>
 
-        <p>
-            Follow our projects, gaming content,
-            software development and community updates.
-        </p>
+    <section class="modern-section modern-topics">
 
-        <div class="hero-buttons">
-            <a href="/support/" class="button primary">Community</a>
-            <a href="/about/" class="button secondary">Learn More</a>
+        <div class="modern-shell">
+
+            <div class="modern-section-heading">
+                <h2>Explore topics</h2>
+            </div>
+
+            <div class="modern-topic-list">
+
+                {{ range first 12 site.Taxonomies.categories.ByCount }}
+
+                    <a
+                        href="{{ .Page.RelPermalink }}"
+                        class="modern-topic"
+                    >
+                        {{ .Page.Title }}
+                        <span>{{ .Count }}</span>
+                    </a>
+
+                {{ else }}
+
+                    <a
+                        class="modern-topic"
+                        href="{{ "/posts/" | relURL }}"
+                    >
+                        Gaming
+                    </a>
+
+                    <a
+                        class="modern-topic"
+                        href="{{ "/posts/" | relURL }}"
+                    >
+                        Linux
+                    </a>
+
+                    <a
+                        class="modern-topic"
+                        href="{{ "/posts/" | relURL }}"
+                    >
+                        Software
+                    </a>
+
+                    <a
+                        class="modern-topic"
+                        href="{{ "/posts/" | relURL }}"
+                    >
+                        Development
+                    </a>
+
+                {{ end }}
+
+            </div>
+
         </div>
-    </div>
-</section>
+
+    </section>
+
+
+    <section class="modern-section modern-studio">
+
+        <div class="modern-shell">
+
+            <p class="modern-kicker">
+                From the studio
+            </p>
+
+            <div class="modern-section-heading modern-heading-with-link">
+
+                <h2>Recent projects</h2>
+
+                <a href="{{ "/projects/" | relURL }}">
+                    View projects →
+                </a>
+
+            </div>
+
+            <div class="modern-studio-list">
+
+                {{ range first 3 $projects }}
+
+                    <article class="modern-studio-row">
+
+                        <div>
+
+                            <h3>
+                                <a href="{{ .RelPermalink }}">
+                                    {{ .Title }}
+                                </a>
+                            </h3>
+
+                            {{ with .Description }}
+                                <p>{{ . }}</p>
+                            {{ end }}
+
+                        </div>
+
+                        <a
+                            class="modern-row-arrow"
+                            href="{{ .RelPermalink }}"
+                            aria-label="Open {{ .Title }}"
+                        >
+                            →
+                        </a>
+
+                    </article>
+
+                {{ else }}
+
+                    <article class="modern-studio-row">
+
+                        <div>
+                            <h3>Deckd</h3>
+                            <p>
+                                Native DJ software from
+                                Gaming Evolution Centre.
+                            </p>
+                        </div>
+
+                        <a
+                            class="modern-row-arrow"
+                            href="{{ "/projects/" | relURL }}"
+                        >
+                            →
+                        </a>
+
+                    </article>
+
+                {{ end }}
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="modern-section modern-creator">
+
+        <div class="modern-shell">
+
+            <p class="modern-kicker">
+                Creator hub
+            </p>
+
+            <div class="modern-section-heading">
+                <h2>Put the projects to work</h2>
+            </div>
+
+            <div class="modern-hub-grid">
+
+                <a
+                    class="modern-hub-card"
+                    href="{{ "/downloads/" | relURL }}"
+                >
+                    <span class="modern-hub-number">01</span>
+                    <h3>Downloads</h3>
+                    <p>
+                        Get software, utilities and releases.
+                    </p>
+                    <span class="modern-hub-link">
+                        Browse downloads →
+                    </span>
+                </a>
+
+
+                <a
+                    class="modern-hub-card"
+                    href="{{ "/projects/" | relURL }}"
+                >
+                    <span class="modern-hub-number">02</span>
+                    <h3>Projects</h3>
+                    <p>
+                        Explore the software and community projects.
+                    </p>
+                    <span class="modern-hub-link">
+                        View projects →
+                    </span>
+                </a>
+
+
+                <a
+                    class="modern-hub-card"
+                    href="{{ "/store/" | relURL }}"
+                >
+                    <span class="modern-hub-number">03</span>
+                    <h3>Store</h3>
+                    <p>
+                        Find Gaming Evolution Centre products.
+                    </p>
+                    <span class="modern-hub-link">
+                        Open store →
+                    </span>
+                </a>
+
+
+                <a
+                    class="modern-hub-card"
+                    href="{{ "/support/" | relURL }}"
+                >
+                    <span class="modern-hub-number">04</span>
+                    <h3>Support</h3>
+                    <p>
+                        Get help with software and the community.
+                    </p>
+                    <span class="modern-hub-link">
+                        Get support →
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="modern-section modern-current">
+
+        <div class="modern-shell modern-current-grid">
+
+            <div>
+
+                <p class="modern-kicker">
+                    Stay current
+                </p>
+
+                <h2>
+                    YouTube, Twitch and community updates.
+                </h2>
+
+                <p>
+                    Follow Gaming Evolution Centre for new guides,
+                    streams, releases and project updates.
+                </p>
+
+            </div>
+
+            <div class="modern-current-actions">
+
+                <a
+                    class="modern-text-button"
+                    href="{{ with site.Params.youtube }}{{ . }}{{ else }}#{{ end }}"
+                >
+                    YouTube →
+                </a>
+
+                <a
+                    class="modern-text-button"
+                    href="{{ with site.Params.twitch }}{{ . }}{{ else }}#{{ end }}"
+                >
+                    Twitch →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<!-- ======================================================
+     OLD
+     Pre-Astro / traditional Chris Titus Hugo-inspired layout.
+     Kept out of Pagefind to avoid indexing duplicate homepage
+     content.
+     ====================================================== -->
+
+<div
+    class="home-style home-old"
+    data-pagefind-ignore="all"
+>
+
+    <section class="old-hero">
+
+        <div class="old-container">
+
+            <p class="old-eyebrow">
+                Gaming • Software • Technology
+            </p>
+
+            <h1>
+                Gaming Evolution Centre
+            </h1>
+
+            <p>
+                Gaming, software, technology and community.
+                Explore our projects, downloads, guides and updates.
+            </p>
+
+            <div class="old-hero-actions">
+
+                <a
+                    class="old-button old-button-primary"
+                    href="{{ "/downloads/" | relURL }}"
+                >
+                    Explore Downloads
+                </a>
+
+                <a
+                    class="old-button old-button-secondary"
+                    href="{{ "/projects/" | relURL }}"
+                >
+                    View Projects
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="old-section">
+
+        <div class="old-container">
+
+            <div class="old-section-title">
+
+                <div>
+
+                    <p class="old-eyebrow">
+                        News &amp; Updates
+                    </p>
+
+                    <h2>
+                        Latest Posts
+                    </h2>
+
+                </div>
+
+                <a href="{{ "/posts/" | relURL }}">
+                    View all
+                </a>
+
+            </div>
+
+
+            <div class="old-post-grid">
+
+                {{ range first 6 $posts }}
+
+                    <article class="old-card">
+
+                        {{ with .Params.image }}
+
+                            <a
+                                class="old-card-image"
+                                href="{{ $.RelPermalink }}"
+                            >
+                                <img
+                                    src="{{ . | relURL }}"
+                                    alt=""
+                                    loading="lazy"
+                                >
+                            </a>
+
+                        {{ end }}
+
+                        <div class="old-card-body">
+
+                            <div class="old-card-meta">
+
+                                <time datetime="{{ .Date.Format "2006-01-02" }}">
+                                    {{ .Date.Format "2 Jan 2006" }}
+                                </time>
+
+                                {{ with .Params.categories }}
+                                    <span>{{ index . 0 }}</span>
+                                {{ end }}
+
+                            </div>
+
+                            <h3>
+                                <a href="{{ .RelPermalink }}">
+                                    {{ .Title }}
+                                </a>
+                            </h3>
+
+                            <p>
+                                {{ .Summary | plainify | truncate 145 }}
+                            </p>
+
+                            <a
+                                class="old-read-more"
+                                href="{{ .RelPermalink }}"
+                            >
+                                Read More →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                {{ end }}
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="old-section old-section-alt">
+
+        <div class="old-container">
+
+            <div class="old-section-title">
+
+                <div>
+
+                    <p class="old-eyebrow">
+                        Software
+                    </p>
+
+                    <h2>
+                        Projects
+                    </h2>
+
+                </div>
+
+                <a href="{{ "/projects/" | relURL }}">
+                    View all
+                </a>
+
+            </div>
+
+
+            <div class="old-project-grid">
+
+                {{ range first 2 $projects }}
+
+                    <article class="old-wide-card">
+
+                        <div>
+
+                            <h3>
+                                <a href="{{ .RelPermalink }}">
+                                    {{ .Title }}
+                                </a>
+                            </h3>
+
+                            {{ with .Description }}
+                                <p>{{ . }}</p>
+                            {{ else }}
+                                <p>
+                                    {{ .Summary | plainify | truncate 170 }}
+                                </p>
+                            {{ end }}
+
+                        </div>
+
+                        <a
+                            class="old-button old-button-secondary"
+                            href="{{ .RelPermalink }}"
+                        >
+                            Learn More
+                        </a>
+
+                    </article>
+
+                {{ end }}
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="old-section">
+
+        <div class="old-container">
+
+            <div class="old-section-title">
+
+                <div>
+
+                    <p class="old-eyebrow">
+                        Releases
+                    </p>
+
+                    <h2>
+                        Downloads
+                    </h2>
+
+                </div>
+
+                <a href="{{ "/downloads/" | relURL }}">
+                    View all
+                </a>
+
+            </div>
+
+
+            <div class="old-download-list">
+
+                {{ range first 3 $downloads }}
+
+                    <article class="old-download-row">
+
+                        <div>
+
+                            <h3>
+                                <a href="{{ .RelPermalink }}">
+                                    {{ .Title }}
+                                </a>
+                            </h3>
+
+                            {{ with .Description }}
+                                <p>{{ . }}</p>
+                            {{ end }}
+
+                        </div>
+
+                        <a
+                            class="old-button old-button-primary"
+                            href="{{ .RelPermalink }}"
+                        >
+                            Download
+                        </a>
+
+                    </article>
+
+                {{ else }}
+
+                    <article class="old-download-row">
+
+                        <div>
+                            <h3>Downloads</h3>
+                            <p>
+                                Software releases will appear here.
+                            </p>
+                        </div>
+
+                        <a
+                            class="old-button old-button-primary"
+                            href="{{ "/downloads/" | relURL }}"
+                        >
+                            Browse
+                        </a>
+
+                    </article>
+
+                {{ end }}
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
 
 {{ end }}
