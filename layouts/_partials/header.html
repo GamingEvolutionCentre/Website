@@ -1,9 +1,14 @@
 <header class="site-header" data-pagefind-ignore="all">
+
     <div class="nav-container">
 
-        <a class="site-logo" href="{{ site.Home.RelPermalink }}">
+        <a
+            class="site-logo"
+            href="{{ site.Home.RelPermalink }}"
+        >
             Gaming Evolution Centre
         </a>
+
 
         <button
             class="mobile-menu-button"
@@ -18,12 +23,15 @@
             <span></span>
         </button>
 
+
         <nav
             class="main-nav"
             id="main-navigation"
             aria-label="Main navigation"
         >
+
             {{ range site.Menus.main }}
+
                 {{ $active := false }}
 
                 {{ if $.IsMenuCurrent "main" . }}
@@ -34,11 +42,72 @@
 
                 <a
                     href="{{ .URL }}"
-                    {{ if $active }}class="active" aria-current="page"{{ end }}
+                    {{ if $active }}
+                        class="active"
+                        aria-current="page"
+                    {{ end }}
                 >
                     {{ .Name }}
                 </a>
+
             {{ end }}
+
+
+            <!--
+                Independent colour-theme control.
+
+                Bulb ON  = Light mode
+                Bulb OFF = Dark mode
+
+                This deliberately does NOT change Modern / Old.
+            -->
+            <button
+                type="button"
+                class="theme-toggle"
+                id="theme-toggle"
+                aria-label="Turn light mode on"
+                aria-pressed="false"
+                title="Light mode"
+            >
+                <svg
+                    class="theme-toggle-icon"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    aria-hidden="true"
+                >
+                    <path
+                        class="bulb-rays"
+                        d="M12 1.5v2M4.58 4.58 6 6M1.5 12h2M20.5 12h2M18 6l1.42-1.42"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                    />
+
+                    <path
+                        class="bulb-glass"
+                        d="M8.15 15.15C6.82 14.08 6 12.44 6 10.6A6 6 0 0 1 18 10.6c0 1.84-.82 3.48-2.15 4.55-.72.58-1.1 1.17-1.2 1.85h-5.3c-.1-.68-.48-1.27-1.2-1.85Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linejoin="round"
+                    />
+
+                    <path
+                        d="M9.4 19h5.2M10.25 21.5h3.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                    />
+                </svg>
+
+                <span class="sr-only">
+                    Toggle light mode
+                </span>
+            </button>
+
 
             <button
                 type="button"
@@ -50,6 +119,9 @@
                 <span>Search</span>
                 <kbd>Ctrl K</kbd>
             </button>
+
         </nav>
+
     </div>
+
 </header>

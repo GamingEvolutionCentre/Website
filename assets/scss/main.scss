@@ -1,16 +1,13 @@
-@import "switcher";
-@import "modern";
-@import "old";
-
 /* =========================================================
    Gaming Evolution Centre
    Shared stylesheet
    ---------------------------------------------------------
    This restores the full common styling that was overwritten.
-   Modern/Old visual overrides live in:
-     assets/scss/_modern.scss
-     assets/scss/_old.scss
-     assets/scss/_switcher.scss
+   Colour themes and layout styles are deliberately independent:
+     assets/scss/_theme.scss      = Light / Dark colours
+     assets/scss/_modern.scss     = Modern layout only
+     assets/scss/_old.scss        = Old layout only
+     assets/scss/_switcher.scss   = Modern / Old switch UI
 
    The shared classes below support the current Hugo templates
    and the Chris-Titus-inspired editorial sections we are adding.
@@ -1817,3 +1814,18 @@ h6 {
         width: 100%;
     }
 }
+
+/* =========================================================
+   Independent visual layers
+   ---------------------------------------------------------
+   Order matters:
+   1. theme     -> Light / Dark colour palette
+   2. switcher  -> Modern / Old control
+   3. modern    -> Modern layout/shape/typography only
+   4. old       -> Old layout/shape/typography only
+   ========================================================= */
+
+@import "theme";
+@import "switcher";
+@import "modern";
+@import "old";

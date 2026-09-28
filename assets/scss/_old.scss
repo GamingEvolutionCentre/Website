@@ -1,19 +1,14 @@
-/* OLD STYLE
-   Pre-Astro / older Hugo-era Chris Titus-inspired treatment */
+/* =========================================================
+   OLD WEBSITE STYLE
+   ---------------------------------------------------------
+   Layout / typography / spacing only.
+
+   Light or Dark colours come from _theme.scss.
+   ========================================================= */
 
 html[data-site-style="old"] {
-    --old-bg: #232629;
-    --old-surface: #2e3135;
-    --old-surface-2: #1e3747;
-    --old-text: #f4f4f4;
-    --old-muted: #b4b8bd;
-    --old-border: #3b4252;
-    --old-link: #add8e6;
-    --old-accent: #4fa3d1;
 
     body {
-        background: var(--old-bg);
-        color: var(--old-text);
         font-family:
             "PT Sans",
             "Segoe UI",
@@ -21,119 +16,144 @@ html[data-site-style="old"] {
             sans-serif;
     }
 
+
+    .container,
+    .footer-container,
+    .page-container,
+    .nav-container {
+        max-width: 1140px;
+    }
+
+
     .site-header {
-        background: var(--old-surface-2);
-        border-bottom: 1px solid #365064;
         backdrop-filter: none;
     }
 
-    .site-logo,
-    .main-nav > a {
-        color: #fff;
+
+    .nav-container {
+        min-height: 64px;
     }
+
+
+    .site-logo {
+        font-size: 1.15rem;
+        letter-spacing: 0;
+    }
+
+
+    .main-nav {
+        gap: 18px;
+    }
+
+
+    .main-nav > a {
+        font-size: 0.92rem;
+        font-weight: 600;
+    }
+
 
     .main-nav > a::after {
-        background: var(--old-link);
+        bottom: -6px;
     }
 
-    .header-search-button {
-        background: rgba(0, 0, 0, 0.2);
-        border-color: rgba(255, 255, 255, 0.16);
-        color: #fff;
+
+    .header-search-button,
+    .theme-toggle {
+        border-radius: 4px;
     }
+
 
     .hero {
         min-height: auto;
-        padding: 70px 24px;
+
+        padding:
+            70px
+            24px;
+
         text-align: center;
-        background:
-            linear-gradient(
-                180deg,
-                #1d2125 0%,
-                #232629 100%
-            );
     }
+
 
     .hero-glow {
         display: none;
     }
 
-    .hero h1,
+
+    .hero h1 {
+        margin-bottom: 20px;
+
+        font-family:
+            "PT Sans",
+            Arial,
+            sans-serif;
+
+        font-size:
+            clamp(
+                2.8rem,
+                6vw,
+                5rem
+            );
+
+        line-height: 1.05;
+
+        letter-spacing:
+            -0.03em;
+    }
+
+
+    .button {
+        border-radius: 4px;
+    }
+
+
+    .home-section {
+        padding:
+            56px
+            0;
+    }
+
+
+    .section-heading {
+        padding-bottom: 14px;
+
+        border-bottom:
+            1px solid
+            var(--gec-border);
+    }
+
+
     .section-heading h2,
     .page-hero h1,
     .article-header h1,
     .article-content h2,
     .article-content h3,
-    .article-content h4,
     .project-header-content h1,
     .software-info h1 {
-        color: #fff;
         font-family:
             "PT Sans",
             Arial,
             sans-serif;
     }
 
-    .hero-description,
-    .content-card p,
-    .project-card-content p,
-    .download-description,
-    .page-hero-description,
-    .page-intro,
-    .article-content,
-    .article-description,
-    .project-description,
-    .software-description {
-        color: var(--old-muted);
+
+    .content-grid {
+        gap: 24px;
     }
 
-    .button.primary {
-        background: var(--old-accent);
-        color: #fff;
-        border-color: var(--old-accent);
-        border-radius: 4px;
-    }
-
-    .button.secondary {
-        border-color: #59636d;
-        color: #fff;
-        border-radius: 4px;
-    }
-
-    .alternate-section {
-        background: #1f2225;
-        border-color: var(--old-border);
-    }
-
-    .section-link,
-    .card-link,
-    .article-content a {
-        color: var(--old-link);
-    }
 
     .content-card,
     .project-list-card,
-    .download-card,
-    .project-sidebar-card {
-        background: var(--old-surface);
-        border: 1px solid var(--old-border);
+    .download-card {
         border-radius: 4px;
-        box-shadow: none;
     }
+
 
     .content-card:hover,
     .project-list-card:hover,
     .download-card:hover {
         transform: none;
-        border-color: #566273;
     }
 
-    .content-card h2 a,
-    .content-card h3 a,
-    .project-card-content h2 a,
-    .download-top h2 a {
-        color: #fff;
-    }
 
     .card-category,
     .article-category,
@@ -143,47 +163,91 @@ html[data-site-style="old"] {
     .technology-badge,
     .platform-badge,
     .tag {
-        background: #24282c;
-        border-color: var(--old-border);
-        color: #e7e7e7;
         border-radius: 3px;
     }
 
+
     .feature-banner {
-        background: var(--old-surface-2);
-        border-color: #365064;
         border-radius: 4px;
     }
 
-    .feature-banner p {
-        color: #c8d1d8;
-    }
 
-    .community-section,
     .page-hero {
-        background: #1f2225;
-        border-color: var(--old-border);
+        padding:
+            70px
+            0
+            45px;
+
+        text-align: center;
     }
 
-    .article-content pre,
-    .article-content code {
-        background: #17191c;
+
+    .article-header {
+        padding-top: 70px;
+        text-align: center;
     }
 
-    .site-footer {
-        background: #191c1f;
-        border-top-color: var(--old-border);
+
+    .article-meta {
+        justify-content:
+            center;
     }
 
-    .footer-logo,
-    .footer-column h3 {
-        color: #fff;
+
+    .project-hero-image,
+    .software-image,
+    .article-featured-image {
+        border-radius: 4px;
     }
 
-    .footer-brand p,
-    .footer-column a,
-    .footer-bottom p,
-    .footer-legal a {
-        color: #adb3b9;
+
+    .project-sidebar-card {
+        border-radius: 4px;
     }
+
+
+    /*
+     * Old-style pages keep the more conventional
+     * card/grid presentation rather than the flat
+     * editorial Modern layout.
+     */
+
+    .featured-layout {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .article-row {
+        grid-template-columns:
+            130px
+            1fr;
+    }
+
+
+    .creator-hub-card {
+        border-radius: 3px;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    html[data-site-style="old"]
+    .featured-layout {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    html[data-site-style="old"]
+    .article-row {
+        grid-template-columns:
+            1fr;
+    }
+
 }

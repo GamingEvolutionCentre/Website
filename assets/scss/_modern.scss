@@ -1,17 +1,14 @@
-/* MODERN STYLE
-   Current Chris Titus-inspired editorial treatment */
+/* =========================================================
+   MODERN WEBSITE STYLE
+   ---------------------------------------------------------
+   Layout / typography / spacing only.
+
+   Light or Dark colours come from _theme.scss.
+   ========================================================= */
 
 html[data-site-style="modern"] {
-    --modern-bg: #f5f1e8;
-    --modern-surface: #fbf8f1;
-    --modern-text: #1a1a18;
-    --modern-muted: #6e6b64;
-    --modern-border: #d8d1c4;
-    --modern-dark: #121311;
 
     body {
-        background: var(--modern-bg);
-        color: var(--modern-text);
         font-family:
             Inter,
             ui-sans-serif,
@@ -22,169 +19,173 @@ html[data-site-style="modern"] {
             sans-serif;
     }
 
+
+    .container,
+    .footer-container,
+    .page-container,
+    .nav-container {
+        max-width: 1120px;
+    }
+
+
     .site-header {
-        background: rgba(245, 241, 232, 0.94);
-        border-bottom: 1px solid var(--modern-border);
-        backdrop-filter: blur(12px);
+        backdrop-filter: blur(14px);
     }
 
-    .site-logo,
+
+    .site-logo {
+        font-size: 1rem;
+        letter-spacing: -0.025em;
+    }
+
+
     .main-nav > a {
-        color: var(--modern-text);
+        font-size: 0.88rem;
+        font-weight: 650;
     }
 
-    .main-nav > a:hover,
-    .main-nav > a.active {
-        color: #000;
-    }
-
-    .main-nav > a::after {
-        background: var(--modern-text);
-    }
-
-    .header-search-button {
-        background: transparent;
-        border-color: var(--modern-border);
-        color: var(--modern-text);
-    }
-
-    .header-search-button kbd {
-        background: #ebe6dc;
-        border-color: var(--modern-border);
-        color: var(--modern-muted);
-    }
 
     .hero {
         min-height: auto;
+
         justify-content: flex-start;
-        padding: 110px 0 90px;
+
+        padding:
+            110px
+            0
+            90px;
+
         text-align: left;
+
         overflow: visible;
     }
+
 
     .hero-glow {
         display: none;
     }
 
+
     .hero-content {
         width: calc(100% - 48px);
         max-width: 1120px;
+
         margin: 0 auto;
     }
 
-    .hero-label,
-    .section-label {
-        color: var(--modern-muted);
-    }
 
     .hero h1 {
-        max-width: 920px;
-        margin: 16px 0 28px;
+        max-width: 940px;
+
+        margin:
+            16px
+            0
+            28px;
 
         font-family:
             Georgia,
             "Times New Roman",
             serif;
 
-        font-size: clamp(3.8rem, 8vw, 7.25rem);
+        font-size:
+            clamp(
+                3.8rem,
+                8vw,
+                7.25rem
+            );
+
         line-height: 0.92;
-        letter-spacing: -0.065em;
+
+        letter-spacing:
+            -0.065em;
+
         font-weight: 700;
     }
 
+
     .hero-description {
         max-width: 720px;
-        margin: 0 0 34px;
-        color: var(--modern-muted);
+
+        margin:
+            0
+            0
+            34px;
+
         font-size: 1.15rem;
-        line-height: 1.7;
     }
+
 
     .hero-buttons {
-        justify-content: flex-start;
+        justify-content:
+            flex-start;
     }
 
-    .button.primary {
-        background: var(--modern-dark);
-        color: #fff;
-        border-color: var(--modern-dark);
+
+    .button {
+        border-radius: 999px;
     }
 
-    .button.secondary {
-        background: transparent;
-        color: var(--modern-text);
-        border-color: var(--modern-border);
+
+    .home-section {
+        padding:
+            72px
+            0;
     }
 
-    .alternate-section {
-        background: transparent;
-        border-top: 1px solid var(--modern-border);
-        border-bottom: 1px solid var(--modern-border);
-    }
 
     .section-heading {
-        border-bottom: 1px solid var(--modern-border);
         padding-bottom: 18px;
+
+        border-bottom:
+            1px solid
+            var(--gec-border);
     }
 
-    .section-heading h2 {
-        color: var(--modern-text);
+
+    .section-heading h2,
+    .editorial-heading h2,
+    .page-hero h1,
+    .article-header h1 {
         font-family:
             Georgia,
             "Times New Roman",
             serif;
-        letter-spacing: -0.035em;
     }
 
-    .section-link,
-    .card-link {
-        color: var(--modern-text);
+
+    .content-grid {
+        gap: 0;
+
+        border-top:
+            1px solid
+            var(--gec-border);
     }
+
 
     .content-card {
-        background: transparent;
-        border-color: var(--modern-border);
+        border-width:
+            0
+            0
+            1px
+            0;
+
         border-radius: 0;
+
         box-shadow: none;
     }
 
+
     .content-card:hover {
         transform: none;
-        background: rgba(255, 255, 255, 0.24);
     }
 
-    .content-card h2,
-    .content-card h3,
-    .article-header h1,
-    .article-content h2,
-    .article-content h3,
-    .article-content h4,
-    .page-hero h1 {
-        color: var(--modern-text);
-        font-family:
-            Georgia,
-            "Times New Roman",
-            serif;
+
+    .card-content {
+        padding:
+            28px
+            0;
     }
 
-    .content-card h2 a,
-    .content-card h3 a,
-    .project-card-content h2 a,
-    .download-top h2 a {
-        color: var(--modern-text);
-    }
-
-    .content-card p,
-    .card-meta,
-    .card-date,
-    .page-hero-description,
-    .page-intro,
-    .article-content,
-    .article-description,
-    .project-description,
-    .software-description {
-        color: var(--modern-muted);
-    }
 
     .card-category,
     .article-category,
@@ -194,46 +195,116 @@ html[data-site-style="modern"] {
     .technology-badge,
     .platform-badge,
     .tag {
-        background: transparent;
-        border-color: var(--modern-border);
-        color: var(--modern-text);
-        border-radius: 999px;
+        border-radius:
+            999px;
     }
+
 
     .project-list-card,
     .download-card,
     .project-sidebar-card {
-        background: var(--modern-surface);
-        border-color: var(--modern-border);
         border-radius: 0;
     }
+
+
+    .project-list-card:hover,
+    .download-card:hover {
+        transform: none;
+    }
+
+
+    .project-image-wrapper,
+    .download-image-wrapper,
+    .project-hero-image,
+    .software-image,
+    .article-featured-image {
+        border-radius: 0;
+    }
+
 
     .feature-banner {
-        background: var(--modern-dark);
-        color: #fff;
-        border: 0;
         border-radius: 0;
     }
 
-    .feature-banner p {
-        color: #bdbdb7;
+
+    .page-hero {
+        padding:
+            96px
+            0
+            52px;
+
+        text-align: left;
     }
 
-    .site-footer {
-        background: var(--modern-dark);
-        color: #fff;
-        border-top: 0;
+
+    .page-hero-description,
+    .page-intro {
+        margin-left: 0;
     }
 
-    .footer-brand p,
-    .footer-column a,
-    .footer-bottom p,
-    .footer-legal a {
-        color: #b6b6b0;
+
+    .article-header {
+        text-align: left;
     }
 
-    .footer-logo,
-    .footer-column h3 {
-        color: #fff;
+
+    .article-header-content {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
     }
+
+
+    .article-meta {
+        justify-content:
+            flex-start;
+    }
+
+
+    .editorial-section {
+        padding:
+            72px
+            0;
+    }
+
+
+    .featured-layout {
+        grid-template-columns:
+            1.65fr
+            1fr;
+    }
+
+
+    .article-row {
+        grid-template-columns:
+            150px
+            1fr;
+    }
+
+
+    .creator-hub-card {
+        border-radius: 0;
+    }
+
+}
+
+
+/* Mobile layout remains Modern,
+   only compressed for the screen size. */
+
+@media (max-width: 800px) {
+
+    html[data-site-style="modern"]
+    .featured-layout {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    html[data-site-style="modern"]
+    .article-row {
+        grid-template-columns:
+            1fr;
+    }
+
 }
