@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.Locale | default "en-GB" }}">
+
+<html
+    lang="{{ site.Language.Locale | default "en-GB" }}"
+    data-site-style="modern"
+>
 <head>
+    <script>
+        (() => {
+            const storageKey = "gec-site-style";
+            let style = "modern";
+
+            try {
+                const saved = localStorage.getItem(storageKey);
+
+                if (saved === "modern" || saved === "old") {
+                    style = saved;
+                }
+            } catch (_) {}
+
+            document.documentElement.dataset.siteStyle = style;
+        })();
+    </script>
+
     {{ partial "head.html" . }}
 </head>
 
 <body>
+    {{ partial "site-style-switcher.html" . }}
     {{ partial "header.html" . }}
 
     <main id="main-content" data-pagefind-body>
