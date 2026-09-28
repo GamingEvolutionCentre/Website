@@ -1,5 +1,19 @@
+# Hugo generated website
 public/
+
+# Hugo generated resources/cache
 resources/_gen/
-node_modules/
 .hugo_build.lock
+
+# Node dependencies
+node_modules/
+
+# Local cache
+.cache/
+
+# macOS
 .DS_Store
+
+# Environment files
+.env
+.env.local

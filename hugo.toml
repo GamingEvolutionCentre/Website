@@ -1,5 +1,5 @@
 baseURL = "https://gamingevolutioncentre.pages.dev/"
-languageCode = "en-gb"
+locale = "en-GB"
 title = "Gaming Evolution Centre"
 
 enableRobotsTXT = true
