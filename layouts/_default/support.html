@@ -1,0 +1,144 @@
+{{ define "main" }}
+
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow">Gaming Evolution Centre</p>
+
+        <h1>Support</h1>
+
+        <p class="page-hero-description">
+            Need help? Send us a support request and we'll get back to you.
+        </p>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="container">
+
+        <div class="support-container">
+
+            <form
+                id="support-form"
+                class="support-form"
+                method="post"
+                novalidate
+            >
+
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="support-name">
+                        Name
+                    </label>
+
+                    <input
+                        id="support-name"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="support-email">
+                        Email
+                    </label>
+
+                    <input
+                        id="support-email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        maxlength="254"
+                        required
+                    >
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group">
+                    <label for="support-subject">
+                        Subject
+                    </label>
+
+                    <input
+                        id="support-subject"
+                        name="subject"
+                        type="text"
+                        maxlength="150"
+                        required
+                    >
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <label for="support-message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="support-message"
+                        name="message"
+                        rows="8"
+                        maxlength="5000"
+                        required
+                    ></textarea>
+                </div>
+
+                <!--
+                    Honeypot spam protection.
+
+                    Normal visitors cannot see this field.
+                    Bots that fill it will be detected by
+                    functions/api/support.js.
+                -->
+                <div
+                    class="support-honeypot"
+                    aria-hidden="true"
+                >
+                    <label for="support-website">
+                        Website
+                    </label>
+
+                    <input
+                        id="support-website"
+                        name="website"
+                        type="text"
+                        tabindex="-1"
+                        autocomplete="off"
+                    >
+                </div>
+
+                <!-- Submit -->
+                <button
+                    class="button primary"
+                    type="submit"
+                >
+                    Send request
+                </button>
+
+                <!-- Success / error messages -->
+                <p
+                    id="support-form-status"
+                    class="support-form-status"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Support form JavaScript -->
+{{ $supportJS := resources.Get "js/support.js" | minify | fingerprint }}
+
+<script
+    src="{{ $supportJS.RelPermalink }}"
+    integrity="{{ $supportJS.Data.Integrity }}"
+    defer
+></script>
+
+{{ end }}
