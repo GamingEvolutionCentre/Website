@@ -1,15 +1,11 @@
 /* =========================================================
-   OLD
-   Pre-Astro Chris Titus Hugo-era-inspired presentation.
-   COLOURS come from _theme.scss.
+   PERMANENT PRE-ASTRO / HUGO-ERA STYLE
+   ---------------------------------------------------------
+   This is now the only website layout.
+   Light/Dark colours come from _theme.scss.
    ========================================================= */
 
-
-/* =========================================================
-   Site shell while Old is selected
-   ========================================================= */
-
-html[data-site-style="old"] body {
+body {
     font-family:
         "PT Sans",
         "Segoe UI",
@@ -18,56 +14,199 @@ html[data-site-style="old"] body {
 }
 
 
-html[data-site-style="old"] .nav-container {
+.nav-container {
     max-width: 1140px;
     min-height: 64px;
 }
 
 
-html[data-site-style="old"] .site-header {
+.site-header {
     backdrop-filter: none;
 }
 
 
-html[data-site-style="old"] .site-logo {
+.site-logo {
     font-size: 1.12rem;
     letter-spacing: 0;
 }
 
 
-html[data-site-style="old"] .main-nav {
+.main-nav {
     gap: 17px;
 }
 
 
-html[data-site-style="old"] .main-nav > a {
+.main-nav > a {
     font-size: 0.9rem;
     font-weight: 700;
 }
 
 
-html[data-site-style="old"] .header-search-button {
+.main-nav > a::after {
+    bottom: -6px;
+}
+
+
+.header-search-button,
+.theme-toggle {
     border-radius: 3px;
 }
 
 
-html[data-site-style="old"] .old-container {
+/* Traditional hero */
+
+.hero {
+    min-height: auto;
+    padding: 84px 24px 92px;
+    text-align: center;
+}
+
+
+.hero-glow {
+    display: none;
+}
+
+
+.hero h1 {
+    margin-bottom: 22px;
+
+    font-family:
+        "PT Sans",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            3rem,
+            7vw,
+            5.6rem
+        );
+
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+
+.hero-description {
+    max-width: 720px;
+}
+
+
+.button {
+    border-radius: 3px;
+}
+
+
+/* Traditional section proportions */
+
+.home-section {
+    padding: 64px 0;
+}
+
+
+.section-heading {
+    padding-bottom: 14px;
+    border-bottom:
+        1px solid
+        var(--gec-border);
+}
+
+
+.section-heading h2,
+.page-hero h1,
+.article-header h1,
+.article-content h2,
+.article-content h3,
+.project-header-content h1,
+.software-info h1 {
+    font-family:
+        "PT Sans",
+        Arial,
+        sans-serif;
+}
+
+
+/* Traditional cards */
+
+.content-grid {
+    gap: 22px;
+}
+
+
+.content-card,
+.project-list-card,
+.download-card,
+.project-sidebar-card {
+    border-radius: 4px;
+    box-shadow:
+        0
+        8px
+        22px
+        var(--gec-shadow);
+}
+
+
+.content-card:hover,
+.project-list-card:hover,
+.download-card:hover {
+    transform: none;
+}
+
+
+.card-category,
+.article-category,
+.project-status,
+.download-status,
+.software-status,
+.technology-badge,
+.platform-badge,
+.tag {
+    border-radius: 3px;
+}
+
+
+.feature-banner {
+    border-radius: 4px;
+}
+
+
+/* Page/article presentation */
+
+.page-hero {
+    padding: 72px 0 48px;
+    text-align: center;
+}
+
+
+.article-header {
+    padding-top: 72px;
+    text-align: center;
+}
+
+
+.article-meta {
+    justify-content: center;
+}
+
+
+.article-featured-image,
+.project-hero-image,
+.software-image {
+    border-radius: 4px;
+}
+
+
+/* Old-style helper classes used by the homepage */
+
+.old-container {
     width: calc(100% - 48px);
     max-width: 1140px;
     margin: 0 auto;
 }
 
 
-/* =========================================================
-   Old hero
-   ========================================================= */
-
 .old-hero {
-    padding:
-        84px
-        0
-        92px;
-
+    padding: 84px 0 92px;
     text-align: center;
 
     background:
@@ -85,12 +224,9 @@ html[data-site-style="old"] .old-container {
 
 
 .old-eyebrow {
-    margin:
-        0
-        0
-        12px;
+    margin: 0 0 12px;
 
-    color: var(--gec-text-soft);
+    color: var(--gec-muted);
 
     font-size: 0.75rem;
     font-weight: 800;
@@ -101,10 +237,7 @@ html[data-site-style="old"] .old-container {
 
 
 .old-hero h1 {
-    margin:
-        0
-        0
-        22px;
+    margin: 0 0 22px;
 
     color: var(--gec-text);
 
@@ -150,9 +283,7 @@ html[data-site-style="old"] .old-container {
 
     min-height: 42px;
 
-    padding:
-        10px
-        18px;
+    padding: 10px 18px;
 
     border:
         1px solid
@@ -172,19 +303,13 @@ html[data-site-style="old"] .old-container {
 
 
 .old-button-secondary {
-    background: rgba(0, 0, 0, 0.08);
+    background: transparent;
     color: var(--gec-text);
 }
 
 
-/* =========================================================
-   Old sections
-   ========================================================= */
-
 .old-section {
-    padding:
-        66px
-        0;
+    padding: 66px 0;
 }
 
 
@@ -209,7 +334,6 @@ html[data-site-style="old"] .old-container {
     gap: 24px;
 
     margin-bottom: 28px;
-
     padding-bottom: 14px;
 
     border-bottom:
@@ -220,22 +344,16 @@ html[data-site-style="old"] .old-container {
 
 .old-section-title h2 {
     margin: 0;
-
     font-size: 2.05rem;
 }
 
 
 .old-section-title > a {
-    color: var(--gec-text-soft);
-
+    color: var(--gec-link);
     text-decoration: none;
     font-weight: 700;
 }
 
-
-/* =========================================================
-   Old cards
-   ========================================================= */
 
 .old-post-grid {
     display: grid;
@@ -306,11 +424,7 @@ html[data-site-style="old"] .old-container {
 
 
 .old-card h3 {
-    margin:
-        0
-        0
-        12px;
-
+    margin: 0 0 12px;
     font-size: 1.35rem;
     line-height: 1.25;
 }
@@ -372,11 +486,7 @@ html[data-site-style="old"] .old-container {
 
 
 .old-wide-card h3 {
-    margin:
-        0
-        0
-        12px;
-
+    margin: 0 0 12px;
     font-size: 1.65rem;
 }
 
@@ -424,11 +534,7 @@ html[data-site-style="old"] .old-container {
 
 
 .old-download-row h3 {
-    margin:
-        0
-        0
-        6px;
-
+    margin: 0 0 6px;
     font-size: 1.25rem;
 }
 
@@ -438,68 +544,7 @@ html[data-site-style="old"] .old-container {
 }
 
 
-/* =========================================================
-   Other pages in Old
-   ========================================================= */
-
-html[data-site-style="old"]
-.page-hero {
-    text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--gec-hero-start),
-            var(--gec-hero-mid)
-        );
-}
-
-
-html[data-site-style="old"]
-.content-card,
-html[data-site-style="old"]
-.project-list-card,
-html[data-site-style="old"]
-.download-card,
-html[data-site-style="old"]
-.project-sidebar-card {
-    background: var(--gec-surface);
-
-    border-color: var(--gec-border);
-
-    border-radius: 4px;
-
-    box-shadow:
-        0
-        8px
-        22px
-        var(--gec-shadow);
-}
-
-
-html[data-site-style="old"]
-.card-category,
-html[data-site-style="old"]
-.article-category,
-html[data-site-style="old"]
-.project-status,
-html[data-site-style="old"]
-.download-status,
-html[data-site-style="old"]
-.software-status,
-html[data-site-style="old"]
-.technology-badge,
-html[data-site-style="old"]
-.platform-badge,
-html[data-site-style="old"]
-.tag {
-    border-radius: 3px;
-}
-
-
-/* =========================================================
-   Responsive Old
-   ========================================================= */
+/* Responsive */
 
 @media (max-width: 900px) {
 
@@ -516,7 +561,6 @@ html[data-site-style="old"]
 
 @media (max-width: 700px) {
 
-    html[data-site-style="old"]
     .old-container {
         width: calc(100% - 32px);
     }
@@ -524,8 +568,7 @@ html[data-site-style="old"]
 
     .old-post-grid,
     .old-project-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
 
@@ -536,8 +579,7 @@ html[data-site-style="old"]
 
 
     .old-download-row {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
 

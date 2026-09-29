@@ -1,16 +1,19 @@
+@import "theme";
+@import "old";
+
 /* =========================================================
    Gaming Evolution Centre
    Shared stylesheet
    ---------------------------------------------------------
    This restores the full common styling that was overwritten.
-   Colour themes and layout styles are deliberately independent:
-     assets/scss/_theme.scss      = Light / Dark colours
-     assets/scss/_modern.scss     = Modern layout only
-     assets/scss/_old.scss        = Old layout only
-     assets/scss/_switcher.scss   = Modern / Old switch UI
+   The site now uses one permanent pre-Astro/Hugo-style layout.
+   Light/Dark only changes colours.
 
-   The shared classes below support the current Hugo templates
-   and the Chris-Titus-inspired editorial sections we are adding.
+   Layout styling:
+     assets/scss/_old.scss
+
+   Colour styling:
+     assets/scss/_theme.scss
    ========================================================= */
 
 /* =========================================================
@@ -1814,18 +1817,3 @@ h6 {
         width: 100%;
     }
 }
-
-/* =========================================================
-   Independent visual layers
-   ---------------------------------------------------------
-   Order matters:
-   1. theme     -> Light / Dark colour palette
-   2. switcher  -> Modern / Old control
-   3. modern    -> Modern layout/shape/typography only
-   4. old       -> Old layout/shape/typography only
-   ========================================================= */
-
-@import "theme";
-@import "switcher";
-@import "modern";
-@import "old";

@@ -2,48 +2,28 @@
 
 <html
     lang="{{ site.Language.Locale | default "en-GB" }}"
-    data-site-style="modern"
     data-theme="dark"
 >
 <head>
 
-    <!--
-        Restore both independent preferences before CSS renders:
-        - Site style: Modern / Old
-        - Colour theme: Light / Dark
-    -->
+    <!-- Restore Light/Dark before CSS renders to prevent flashing. -->
     <script>
         (() => {
-            const styleKey = "gec-site-style";
-            const themeKey = "gec-theme";
-
-            let siteStyle = "modern";
+            const storageKey = "gec-theme";
             let theme = "dark";
 
             try {
-                const savedStyle = localStorage.getItem(styleKey);
-                const savedTheme = localStorage.getItem(themeKey);
+                const saved = localStorage.getItem(storageKey);
 
                 if (
-                    savedStyle === "modern" ||
-                    savedStyle === "old"
+                    saved === "light" ||
+                    saved === "dark"
                 ) {
-                    siteStyle = savedStyle;
-                }
-
-                if (
-                    savedTheme === "light" ||
-                    savedTheme === "dark"
-                ) {
-                    theme = savedTheme;
+                    theme = saved;
                 }
             } catch (_) {}
 
-            document.documentElement.dataset.siteStyle =
-                siteStyle;
-
-            document.documentElement.dataset.theme =
-                theme;
+            document.documentElement.dataset.theme = theme;
         })();
     </script>
 
@@ -52,8 +32,6 @@
 </head>
 
 <body>
-
-    {{ partial "site-style-switcher.html" . }}
 
     {{ partial "header.html" . }}
 

@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const STORAGE_KEY =
-        "gec-theme";
+    const STORAGE_KEY = "gec-theme";
 
     const button =
-        document.getElementById(
-            "theme-toggle"
-        );
+        document.getElementById("theme-toggle");
 
 
     if (!button) {
@@ -17,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function currentTheme() {
 
         return (
-            document.documentElement
-                .dataset
-                .theme === "light"
+            document.documentElement.dataset.theme === "light"
         )
             ? "light"
             : "dark";
@@ -56,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
             lightOn
                 ? "Light mode on"
                 : "Light mode off";
-
     }
 
 
@@ -70,39 +64,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        /*
-         * Only colours are changed here.
-         * Modern / Old remains untouched.
-         */
-        document.documentElement
-            .dataset
-            .theme = theme;
+        document.documentElement.dataset.theme =
+            theme;
 
 
         try {
-
             localStorage.setItem(
                 STORAGE_KEY,
                 theme
             );
-
         } catch (_) {}
 
 
         updateButton(theme);
-
-
-        window.dispatchEvent(
-            new CustomEvent(
-                "gec-theme-change",
-                {
-                    detail: {
-                        theme
-                    }
-                }
-            )
-        );
-
     }
 
 
@@ -110,20 +84,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         () => {
 
-            const nextTheme =
+            setTheme(
                 currentTheme() === "light"
                     ? "dark"
-                    : "light";
-
-
-            setTheme(nextTheme);
+                    : "light"
+            );
 
         }
     );
 
 
-    updateButton(
-        currentTheme()
-    );
+    updateButton(currentTheme());
 
 });
