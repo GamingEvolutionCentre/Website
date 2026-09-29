@@ -1,0 +1,295 @@
+/* GEC uniform themes */
+
+html[data-theme="dark"] {
+    --gec-bg: #a4a9ac;
+    --gec-surface: #a4a9ac;
+    --gec-surface-2: #a4a9ac;
+    --gec-surface-3: #a4a9ac;
+    --gec-surface-hover: #afb3b6;
+    --gec-header: #a4a9ac;
+    --gec-footer: #a4a9ac;
+    --gec-text: #000000;
+    --gec-text-soft: #111111;
+    --gec-muted: #2b2b2b;
+    --gec-border: rgba(0,0,0,0.16);
+    --gec-border-strong: rgba(0,0,0,0.28);
+    --gec-link: #000000;
+    --gec-accent: #111111;
+    --gec-accent-text: #ffffff;
+    --gec-code: #959a9d;
+    --gec-shadow: rgba(0,0,0,0.16);
+    --gec-footer-text: #111111;
+}
+
+html[data-theme="light"] {
+    --gec-bg: #ffffff;
+    --gec-surface: #ffffff;
+    --gec-surface-2: #ffffff;
+    --gec-surface-3: #ffffff;
+    --gec-surface-hover: #f5f5f5;
+    --gec-header: #ffffff;
+    --gec-footer: #ffffff;
+    --gec-text: #000000;
+    --gec-text-soft: #111111;
+    --gec-muted: #444444;
+    --gec-border: rgba(0,0,0,0.12);
+    --gec-border-strong: rgba(0,0,0,0.24);
+    --gec-link: #000000;
+    --gec-accent: #111111;
+    --gec-accent-text: #ffffff;
+    --gec-code: #f1f1f1;
+    --gec-shadow: rgba(0,0,0,0.08);
+    --gec-footer-text: #222222;
+}
+
+html[data-theme],
+html[data-theme] body,
+html[data-theme] main,
+html[data-theme] .site-header,
+html[data-theme] .site-footer,
+html[data-theme] .hero,
+html[data-theme] .page-hero,
+html[data-theme] .home-section,
+html[data-theme] .page-section,
+html[data-theme] .alternate-section,
+html[data-theme] .community-section,
+html[data-theme] .project-updates,
+html[data-theme] .old-hero,
+html[data-theme] .old-section,
+html[data-theme] .old-section-alt,
+html[data-theme] .posts-section,
+html[data-theme] .projects-page,
+html[data-theme] .downloads-section,
+html[data-theme] .project-header,
+html[data-theme] .software-header,
+html[data-theme] .software-body,
+html[data-theme] .project-details {
+    background: var(--gec-bg) !important;
+    background-image: none !important;
+    color: var(--gec-text);
+}
+
+html[data-theme] .site-header,
+html[data-theme] .site-footer,
+html[data-theme] .content-card,
+html[data-theme] .project-list-card,
+html[data-theme] .download-card,
+html[data-theme] .project-sidebar-card,
+html[data-theme] .old-card,
+html[data-theme] .old-wide-card,
+html[data-theme] .old-download-row,
+html[data-theme] .feature-banner,
+html[data-theme] .search-panel,
+html[data-theme] .search-input-container {
+    background: var(--gec-bg);
+    border-color: var(--gec-border);
+    color: var(--gec-text);
+}
+
+html[data-theme] .site-logo,
+html[data-theme] .main-nav > a,
+html[data-theme] .main-nav > a:hover,
+html[data-theme] .main-nav > a.active,
+html[data-theme] .hero h1,
+html[data-theme] .page-hero h1,
+html[data-theme] .section-heading h2,
+html[data-theme] .article-header h1,
+html[data-theme] .article-content h2,
+html[data-theme] .article-content h3,
+html[data-theme] .article-content h4,
+html[data-theme] .project-header-content h1,
+html[data-theme] .software-info h1,
+html[data-theme] .old-hero h1,
+html[data-theme] .old-section-title h2,
+html[data-theme] .content-card h2 a,
+html[data-theme] .content-card h3 a,
+html[data-theme] .project-card-content h2 a,
+html[data-theme] .download-top h2 a,
+html[data-theme] .old-card h3 a,
+html[data-theme] .old-wide-card h3 a,
+html[data-theme] .old-download-row h3 a {
+    color: var(--gec-text);
+}
+
+html[data-theme] .hero-description,
+html[data-theme] .page-hero-description,
+html[data-theme] .page-intro,
+html[data-theme] .article-description,
+html[data-theme] .project-description,
+html[data-theme] .software-description,
+html[data-theme] .content-card p,
+html[data-theme] .project-card-content p,
+html[data-theme] .download-description,
+html[data-theme] .old-card p,
+html[data-theme] .old-wide-card p,
+html[data-theme] .old-download-row p {
+    color: var(--gec-text-soft);
+}
+
+html[data-theme] .hero-label,
+html[data-theme] .section-label,
+html[data-theme] .eyebrow,
+html[data-theme] .search-label,
+html[data-theme] .old-eyebrow,
+html[data-theme] .card-meta,
+html[data-theme] .card-date,
+html[data-theme] .download-version,
+html[data-theme] .old-card-meta {
+    color: var(--gec-muted);
+}
+
+html[data-theme] .header-search-button,
+html[data-theme] .theme-toggle {
+    background: transparent;
+    border-color: var(--gec-border-strong);
+    color: var(--gec-text);
+}
+
+html[data-theme] .header-search-button:hover,
+html[data-theme] .content-card:hover,
+html[data-theme] .project-list-card:hover,
+html[data-theme] .download-card:hover {
+    background: var(--gec-surface-hover);
+}
+
+html[data-theme] .header-search-button kbd,
+html[data-theme] .card-category,
+html[data-theme] .article-category,
+html[data-theme] .project-status,
+html[data-theme] .download-status,
+html[data-theme] .software-status,
+html[data-theme] .technology-badge,
+html[data-theme] .platform-badge,
+html[data-theme] .tag {
+    background: transparent;
+    border-color: var(--gec-border);
+    color: var(--gec-text);
+}
+
+html[data-theme] .section-link,
+html[data-theme] .card-link,
+html[data-theme] .text-link,
+html[data-theme] .article-content a,
+html[data-theme] .article-navigation a,
+html[data-theme] .old-read-more,
+html[data-theme] .old-section-title > a {
+    color: var(--gec-link);
+}
+
+html[data-theme] .button.primary,
+html[data-theme] .old-button-primary {
+    background: var(--gec-accent);
+    border-color: var(--gec-accent);
+    color: var(--gec-accent-text);
+}
+
+html[data-theme] .button.secondary,
+html[data-theme] .old-button-secondary {
+    background: transparent;
+    border-color: var(--gec-border-strong);
+    color: var(--gec-text);
+}
+
+html[data-theme] .article-content {
+    color: var(--gec-text-soft);
+}
+
+html[data-theme] .article-content code,
+html[data-theme] .article-content pre {
+    background: var(--gec-code);
+    color: var(--gec-text);
+}
+
+html[data-theme] .footer-logo,
+html[data-theme] .footer-column h3 {
+    color: var(--gec-text);
+}
+
+html[data-theme] .footer-brand p,
+html[data-theme] .footer-column a,
+html[data-theme] .footer-bottom p,
+html[data-theme] .footer-legal a {
+    color: var(--gec-footer-text);
+}
+
+html[data-theme] .search-input {
+    color: var(--gec-text);
+}
+
+html[data-theme] .search-input::placeholder,
+html[data-theme] .search-summary,
+html[data-theme] .search-result-description,
+html[data-theme] .search-result-excerpt,
+html[data-theme] .search-result-meta,
+html[data-theme] .search-footer {
+    color: var(--gec-muted);
+}
+
+html[data-theme] .search-result:hover,
+html[data-theme] .search-result.selected,
+html[data-theme] .search-filter:hover,
+html[data-theme] .search-filter.active {
+    background: var(--gec-surface-hover);
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--gec-border-strong);
+    border-radius: 5px;
+    color: var(--gec-text);
+    cursor: pointer;
+}
+
+.theme-toggle-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+    overflow: visible;
+}
+
+.theme-toggle-icon path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.theme-toggle .bulb-rays {
+    opacity: 0;
+}
+
+html[data-theme="light"] .theme-toggle {
+    background: #fff0a6;
+    border-color: #d2a91b;
+    color: #6d5100;
+    box-shadow:
+        0 0 0 2px rgba(255,215,60,0.10),
+        0 0 18px rgba(255,215,60,0.35);
+}
+
+html[data-theme="light"] .theme-toggle .bulb-rays {
+    opacity: 1;
+}
+
+html[data-theme="light"] .theme-toggle .bulb-glass {
+    fill: #ffd94f;
+}
+
+@media (max-width: 800px) {
+    html[data-theme] .main-nav {
+        background: var(--gec-bg);
+        border-color: var(--gec-border);
+    }
+
+    html[data-theme] .main-nav > a:hover {
+        background: var(--gec-surface-hover);
+    }
+}
