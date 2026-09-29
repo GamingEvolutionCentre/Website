@@ -1,0 +1,26 @@
+{{- $pages := slice -}}
+
+{{- range .Site.Pages -}}
+
+  {{- if ne .Kind "404" -}}
+
+    {{- $tags := slice -}}
+
+    {{- with .Params.tags -}}
+      {{- $tags = . -}}
+    {{- end -}}
+
+    {{- $pages = $pages | append (dict
+      "title" (.Title | default .Site.Title)
+      "url" .RelPermalink
+      "section" .Section
+      "summary" (.Summary | plainify)
+      "content" (.Plain | plainify)
+      "tags" $tags
+    ) -}}
+
+  {{- end -}}
+
+{{- end -}}
+
+{{- $pages | jsonify -}}

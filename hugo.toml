@@ -12,7 +12,7 @@ category = "categories"
 tag = "tags"
 
 [outputs]
-home = ["HTML", "RSS"]
+home = ["HTML", "RSS", "JSON"]
 
 [params]
 description = "Gaming, software, technology and community."

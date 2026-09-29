@@ -43,8 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             triggers: ["discord bot", "moderation bot", "discord moderation", "server moderation"],
-            expansions: [
-                "Gaming Evolution Centre Bot",
+            expansions: [           
                 "Discord bot",
                 "moderation",
                 "server management"
