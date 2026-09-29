@@ -293,3 +293,169 @@ html[data-theme="light"] .theme-toggle .bulb-glass {
         background: var(--gec-surface-hover);
     }
 }
+
+
+/* =========================================================
+   ACCESSIBILITY
+   Keeps screen-reader text available without showing it.
+   ========================================================= */
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+
+/* =========================================================
+   HEADER SEARCH BAR
+   Positioned between the logo and Home.
+   Clicking anywhere in it opens the existing search overlay.
+   ========================================================= */
+
+.header-search-bar {
+    flex: 1 1 250px;
+
+    width: 100%;
+    max-width: 285px;
+    min-width: 145px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 0 11px 0 14px;
+
+    background: transparent;
+    border: 1px solid var(--gec-border-strong);
+    border-radius: 5px;
+
+    color: var(--gec-text);
+
+    cursor: text;
+
+    transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+
+.header-search-bar:hover,
+.header-search-bar:focus-visible {
+    background: var(--gec-surface-hover);
+    border-color: rgba(0, 0, 0, 0.38);
+    outline: none;
+}
+
+
+.header-search-placeholder {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: var(--gec-muted);
+
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-size: 0.88rem;
+}
+
+
+.header-search-icon {
+    width: 18px;
+    height: 18px;
+
+    flex: 0 0 18px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    color: var(--gec-text);
+}
+
+
+/* Give the logo, search field and nav predictable space. */
+
+.nav-container {
+    gap: 18px;
+}
+
+
+.site-logo {
+    flex: 0 0 auto;
+}
+
+
+.main-nav {
+    flex: 0 0 auto;
+}
+
+
+/* The old header search button is no longer used. */
+
+.header-search-button {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .header-search-bar {
+        max-width: 210px;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+
+    .site-logo {
+        order: 1;
+    }
+
+
+    .mobile-menu-button {
+        order: 2;
+        margin-left: auto;
+    }
+
+
+    .header-search-bar {
+        order: 3;
+
+        flex-basis: 100%;
+
+        max-width: none;
+
+        margin-bottom: 10px;
+    }
+
+
+    .main-nav {
+        order: 4;
+    }
+
+}
