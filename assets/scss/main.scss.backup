@@ -1,13 +1,11 @@
 @import "theme";
 @import "old";
-@import "search";
 
 /* =========================================================
    Gaming Evolution Centre
    Shared stylesheet
-   =========================================================
-
-This restores the full common styling that was overwritten.
+   ---------------------------------------------------------
+   This restores the full common styling that was overwritten.
    The site now uses one permanent pre-Astro/Hugo-style layout.
    Light/Dark only changes colours.
 
@@ -16,10 +14,7 @@ This restores the full common styling that was overwritten.
 
    Colour styling:
      assets/scss/_theme.scss
-
-    Search styling:
-      assets/scss/_search.scss
-  ========================================================= */
+   ========================================================= */
 
 /* =========================================================
    Design tokens shared by both styles
