@@ -12,12 +12,11 @@ A custom Hugo website for Gaming Evolution Centre, featuring projects, downloads
 
 [![Hugo](https://img.shields.io/badge/Hugo-Static_Site-FF4088?logo=hugo&logoColor=white)](https://gohugo.io/)
 [![Cloudflare Pages](https://img.shields.io/badge/Cloudflare-Pages-F38020?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
-[![License](https://img.shields.io/badge/License-BSD_3--Clause-green)](LICENSE.md)
+<br>
 
 **[Visit Website](https://gamingevolutioncentre.co.uk/)**
 
 </div>
----
 
 # ✨ Key Features
 
