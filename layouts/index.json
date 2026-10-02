@@ -1,21 +1,21 @@
 {{- $pages := slice -}}
 
 {{- range .Site.RegularPages -}}
-
     {{- if not .Params.excludeFromSearch -}}
-
         {{- $pages = $pages | append (dict
             "title" .Title
-            "url" .RelPermalink
+            "tags" (.Params.tags | default (slice))
+            "categories" (.Params.categories | default (slice))
+            "contents" (.Plain | plainify)
+            "permalink" .RelPermalink
+            "description" (.Params.description | default .Summary | plainify)
             "section" .Section
             "type" .Type
-            "summary" (.Summary | plainify)
-            "content" .Plain
-            "tags" (.Params.tags | default (slice))
+            "technologies" (.Params.technologies | default (slice))
+            "platforms" (.Params.platforms | default (slice))
+            "keywords" (.Params.search_terms | default (slice))
         ) -}}
-
     {{- end -}}
-
 {{- end -}}
 
 {{- $pages | jsonify -}}
