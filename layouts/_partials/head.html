@@ -19,69 +19,6 @@
 <meta name="theme-color" content="#0b0d10">
 
 {{/* =========================================================
-     Pagefind metadata and filters
-     ========================================================= */}}
-
-{{ $searchType := "Page" }}
-{{ if .IsHome }}
-    {{ $searchType = "Home" }}
-{{ else if eq .Section "posts" }}
-    {{ $searchType = "Post" }}
-{{ else if eq .Section "projects" }}
-    {{ $searchType = "Project" }}
-{{ else if eq .Section "downloads" }}
-    {{ $searchType = "Download" }}
-{{ end }}
-
-<meta data-pagefind-meta="title[content]" content="{{ .Title }}">
-<meta
-    data-pagefind-meta="type[content]"
-    data-pagefind-filter="type[content]"
-    content="{{ $searchType }}"
->
-<meta data-pagefind-meta="description[content]" content="{{ $description }}">
-
-{{ with .Params.image }}
-<meta data-pagefind-meta="image[content]" content="{{ . }}">
-{{ end }}
-
-{{ with .Params.search_terms }}
-<meta data-pagefind-meta="keywords[content]" content="{{ delimit . ", " }}">
-{{ end }}
-
-{{ with .Params.tags }}
-<meta data-pagefind-meta="tags[content]" content="{{ delimit . ", " }}">
-{{ range . }}
-<meta data-pagefind-filter="tag[content]" content="{{ . }}">
-{{ end }}
-{{ end }}
-
-{{ with .Params.categories }}
-<meta data-pagefind-meta="categories[content]" content="{{ delimit . ", " }}">
-{{ range . }}
-<meta data-pagefind-filter="category[content]" content="{{ . }}">
-{{ end }}
-{{ end }}
-
-{{ with .Params.platforms }}
-<meta data-pagefind-meta="platforms[content]" content="{{ delimit . ", " }}">
-{{ range . }}
-<meta data-pagefind-filter="platform[content]" content="{{ . }}">
-{{ end }}
-{{ end }}
-
-{{ with .Params.technologies }}
-<meta data-pagefind-meta="technologies[content]" content="{{ delimit . ", " }}">
-{{ range . }}
-<meta data-pagefind-filter="technology[content]" content="{{ . }}">
-{{ end }}
-{{ end }}
-
-{{ if not .Date.IsZero }}
-<meta data-pagefind-meta="date[content]" content="{{ .Date.Format "2006-01-02" }}">
-{{ end }}
-
-{{/* =========================================================
      Styles
      ========================================================= */}}
 
