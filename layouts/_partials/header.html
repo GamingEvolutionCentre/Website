@@ -9,43 +9,7 @@
             Gaming Evolution Centre
         </a>
 
-
-        <!--
-            Visual search bar.
-            The existing Pagefind search JavaScript already listens
-            for #search-open, so this opens the same advanced search.
-        -->
-        <button
-            type="button"
-            class="header-search-bar"
-            id="search-open"
-            aria-label="Open search"
-            aria-haspopup="dialog"
-            aria-controls="search-overlay"
-        >
-            <span class="header-search-placeholder">
-                Search...
-            </span>
-
-            <svg
-                class="header-search-icon"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-            >
-                <circle
-                    cx="11"
-                    cy="11"
-                    r="6.5"
-                ></circle>
-
-                <path
-                    d="M16 16L21 21"
-                ></path>
-            </svg>
-        </button>
-
-
+        {{ partial "search.html" . }}
         <button
             class="mobile-menu-button"
             id="mobile-menu-button"
