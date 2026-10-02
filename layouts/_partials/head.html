@@ -22,24 +22,4 @@
      Styles
      ========================================================= */}}
 
-{{ with resources.Get "scss/main.scss" }}
-    {{ $options := dict
-        "enableSourceMap" hugo.IsDevelopment
-        "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-        "targetPath" "css/main.css"
-    }}
-    {{ with . | css.Sass $options }}
-        {{ if hugo.IsDevelopment }}
-            <link rel="stylesheet" href="{{ .RelPermalink }}">
-        {{ else }}
-            {{ with . | fingerprint }}
-                <link
-                    rel="stylesheet"
-                    href="{{ .RelPermalink }}"
-                    integrity="{{ .Data.Integrity }}"
-                    crossorigin="anonymous"
-                >
-            {{ end }}
-        {{ end }}
-    {{ end }}
-{{ end }}
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">

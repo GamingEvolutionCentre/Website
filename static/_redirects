@@ -1,1 +1,4 @@
 # Add Cloudflare Pages redirects here when needed.
+/css/theme /css/theme.css 301
+/css/old /css/old.css 301
+/css/search /css/search.css 301
