@@ -42,15 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
         button.setAttribute(
             "aria-label",
             lightOn
-                ? "Turn light mode off"
-                : "Turn light mode on"
+                ? "Switch to dark mode"
+                : "Switch to light mode"
         );
 
 
         button.title =
             lightOn
-                ? "Light mode on"
-                : "Light mode off";
+                ? "Light mode"
+                : "Dark mode";
     }
 
 

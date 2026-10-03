@@ -1,0 +1,37 @@
+.theme-toggle-icon .theme-icon-sun,
+.theme-toggle-icon .theme-icon-moon {
+    transform-origin: center;
+    transition:
+        opacity 160ms ease,
+        transform 160ms ease;
+}
+
+.theme-toggle-icon .theme-icon-sun path,
+.theme-toggle-icon .theme-icon-sun circle,
+.theme-toggle-icon .theme-icon-moon path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+html[data-theme="dark"] .theme-icon-sun {
+    opacity: 0;
+    transform: scale(0.75) rotate(-10deg);
+}
+
+html[data-theme="dark"] .theme-icon-moon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+html[data-theme="light"] .theme-icon-sun {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+html[data-theme="light"] .theme-icon-moon {
+    opacity: 0;
+    transform: scale(0.75) rotate(10deg);
+}
