@@ -1,0 +1,171 @@
+/* Keep the desktop header layout on tablets and phones.
+   The structure stays horizontal; only spacing and sizing compresses. */
+
+@media (max-width: 900px) {
+    .gec-nav-container {
+        width: calc(100% - 20px) !important;
+        min-height: 62px !important;
+        padding: 0 !important;
+        flex-wrap: nowrap !important;
+        gap: 10px !important;
+    }
+
+    .mobile-menu-button {
+        display: none !important;
+    }
+
+    .gec-brand {
+        order: 0 !important;
+        flex: 0 1 auto !important;
+        max-width: none !important;
+        overflow: visible !important;
+    }
+
+    .gec-nav-container > .site-search {
+        order: 0 !important;
+        flex: 0 1 180px !important;
+        width: clamp(90px, 26vw, 180px) !important;
+        min-width: 90px !important;
+        max-width: 180px !important;
+        margin: 0 0 0 auto !important;
+    }
+
+    .gec-nav-container > .site-search .header-search-bar {
+        height: 36px !important;
+    }
+
+    .gec-main-nav,
+    .gec-main-nav.open {
+        display: flex !important;
+        order: 0 !important;
+        position: static !important;
+        width: auto !important;
+        flex: 0 0 auto !important;
+        padding: 0 !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .gec-main-nav > a {
+        padding: 21px 0 19px !important;
+        border: 0 !important;
+        font-size: 0.74rem !important;
+    }
+
+    .gec-header-actions {
+        order: 0 !important;
+        width: auto !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding-left: 10px !important;
+        border-left: 1px solid var(--gec-chrome-border) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .gec-nav-container {
+        width: calc(100% - 16px) !important;
+        gap: 6px !important;
+    }
+
+    .gec-brand-image {
+        width: 105px !important;
+        max-width: 105px !important;
+        max-height: 24px !important;
+    }
+
+    .gec-nav-container > .site-search {
+        flex: 0 1 105px !important;
+        width: clamp(72px, 24vw, 105px) !important;
+        min-width: 72px !important;
+        max-width: 105px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .gec-nav-container > .site-search .header-search-bar {
+        height: 32px !important;
+        padding: 0 8px !important;
+        gap: 6px !important;
+    }
+
+    .gec-nav-container > .site-search .header-search-icon {
+        width: 15px !important;
+        height: 15px !important;
+        flex-basis: 15px !important;
+    }
+
+    .gec-nav-container > .site-search .header-search-input {
+        font-size: 0.78rem !important;
+    }
+
+    .gec-main-nav {
+        gap: 7px !important;
+    }
+
+    .gec-main-nav > a {
+        font-size: 0.68rem !important;
+        padding: 21px 0 19px !important;
+    }
+
+    .gec-header-actions {
+        padding-left: 6px !important;
+    }
+
+    .gec-header-actions .theme-toggle,
+    html[data-theme] .gec-header-actions .theme-toggle {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        flex-basis: 32px !important;
+    }
+
+    .gec-header-actions .theme-toggle-icon {
+        width: 17px !important;
+        height: 17px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .gec-nav-container {
+        width: calc(100% - 12px) !important;
+        gap: 5px !important;
+    }
+
+    .gec-brand-image {
+        width: 78px !important;
+        max-width: 78px !important;
+        max-height: 21px !important;
+    }
+
+    .gec-nav-container > .site-search {
+        flex-basis: 68px !important;
+        width: 68px !important;
+        min-width: 58px !important;
+        max-width: 68px !important;
+    }
+
+    .gec-main-nav {
+        gap: 5px !important;
+    }
+
+    .gec-main-nav > a {
+        font-size: 0.62rem !important;
+    }
+
+    .gec-header-actions {
+        padding-left: 4px !important;
+    }
+
+    .gec-header-actions .theme-toggle,
+    html[data-theme] .gec-header-actions .theme-toggle {
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        flex-basis: 30px !important;
+    }
+}
