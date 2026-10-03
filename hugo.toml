@@ -3,6 +3,7 @@ locale = "en-GB"
 title = "Gaming Evolution Centre"
 
 enableRobotsTXT = true
+disableKinds = ["RSS"]
 
 [pagination]
 pagerSize = 10
@@ -12,7 +13,7 @@ category = "categories"
 tag = "tags"
 
 [outputs]
-home = ["HTML", "RSS", "JSON"]
+home = ["HTML", "JSON"]
 
 [params]
 description = "Gaming, software, technology and community."
