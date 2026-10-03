@@ -71,6 +71,21 @@ html[data-theme] .gec-site-header,
     min-width: 0;
 }
 
+/* On desktop, keep the full search field directly beside Articles. */
+@media (min-width: 901px) {
+    .gec-nav-container > .site-search {
+        flex: 0 1 285px !important;
+        width: 285px !important;
+        max-width: 285px !important;
+        margin-left: auto;
+    }
+
+    .gec-main-nav {
+        flex: 0 0 auto !important;
+        justify-content: flex-start !important;
+    }
+}
+
 .gec-main-nav > a {
     position: static !important;
     padding: 21px 0 19px !important;
