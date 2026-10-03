@@ -1,7 +1,13 @@
 <header class="site-header gec-site-header">
     <div class="nav-container gec-nav-container">
-        <a class="site-logo gec-brand" href="{{ site.Home.RelPermalink }}">
-            Gaming Evolution Centre
+        <a class="site-logo gec-brand gec-brand-logo-link" href="{{ site.Home.RelPermalink }}" aria-label="Gaming Evolution Centre home">
+            <img
+                class="gec-brand-image"
+                src="{{ "images/gec-logo.webp" | relURL }}"
+                alt="Gaming Evolution Centre"
+                width="420"
+                height="89"
+            >
         </a>
 
         <button
