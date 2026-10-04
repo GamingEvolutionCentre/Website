@@ -13,23 +13,24 @@
 }
 
 .gec-brand-image {
-    display: block;
-    width: 240px;
-    max-width: 240px;
-    height: auto;
+    display: block !important;
+    width: 320px !important;
+    max-width: 320px !important;
+    height: auto !important;
+    max-height: none !important;
     object-fit: contain;
 }
 
 @media (max-width: 1040px) {
     .gec-brand-image {
-        width: 210px;
-        max-width: 210px;
+        width: 280px !important;
+        max-width: 280px !important;
     }
 }
 
 @media (max-width: 600px) {
     .gec-brand-image {
-        width: 140px;
-        max-width: 140px;
+        width: 155px !important;
+        max-width: 155px !important;
     }
 }
