@@ -1,70 +1,84 @@
-<form class="support-form" id="support-form" action="/api/support" method="post">
-    <p class="support-required-note">
-        Fields marked with <strong>*</strong> are required. All required fields must be completed before your support request can be submitted.
-    </p>
+<div class="support-form-wrapper" id="support-form-wrapper">
+    <form class="support-form" id="support-form" action="/api/support" method="post">
+        <p class="support-required-note">
+            Fields marked with <strong>*</strong> are required. All required fields must be completed before your support request can be submitted.
+        </p>
 
-    <div class="support-field">
-        <label for="support-name">Name <span aria-hidden="true">*</span></label>
-        <input
-            type="text"
-            id="support-name"
-            name="name"
-            autocomplete="name"
-            maxlength="100"
-            required
-        >
-    </div>
+        <div class="support-field">
+            <label for="support-name">Name <span aria-hidden="true">*</span></label>
+            <input
+                type="text"
+                id="support-name"
+                name="name"
+                autocomplete="name"
+                maxlength="100"
+                required
+            >
+        </div>
 
-    <div class="support-field">
-        <label for="support-email">Email address to contact you on <span aria-hidden="true">*</span></label>
-        <input
-            type="email"
-            id="support-email"
-            name="email"
-            autocomplete="email"
-            maxlength="254"
-            required
-        >
-    </div>
+        <div class="support-field">
+            <label for="support-email">Email address to contact you on <span aria-hidden="true">*</span></label>
+            <input
+                type="email"
+                id="support-email"
+                name="email"
+                autocomplete="email"
+                maxlength="254"
+                required
+            >
+        </div>
 
-    <div class="support-field">
-        <label for="support-message">Complaint or help needed <span aria-hidden="true">*</span></label>
-        <textarea
-            id="support-message"
-            name="message"
-            rows="8"
-            maxlength="5000"
-            required
-        ></textarea>
-    </div>
+        <div class="support-field">
+            <label for="support-message">Complaint or help needed <span aria-hidden="true">*</span></label>
+            <textarea
+                id="support-message"
+                name="message"
+                rows="8"
+                maxlength="5000"
+                required
+            ></textarea>
+        </div>
 
-    <div class="support-honeypot" aria-hidden="true">
-        <label for="support-website">Website</label>
-        <input
-            type="text"
-            id="support-website"
-            name="website"
-            tabindex="-1"
-            autocomplete="off"
-        >
-    </div>
+        <div class="support-honeypot" aria-hidden="true">
+            <label for="support-website">Website</label>
+            <input
+                type="text"
+                id="support-website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+            >
+        </div>
 
-    <button class="support-submit" type="submit">Submit</button>
+        <button class="support-submit" type="submit">Submit</button>
 
-    <p
-        class="support-form-status"
-        id="support-form-status"
+        <p
+            class="support-form-status"
+            id="support-form-status"
+            role="status"
+            aria-live="polite"
+        ></p>
+    </form>
+
+    <section
+        class="support-success-message"
+        id="support-success-message"
         role="status"
         aria-live="polite"
-    ></p>
-</form>
+        hidden
+    >
+        <h2>Thank you for your submission</h2>
+        <p>Check your inbox or junk for the automated email with details.</p>
+    </section>
+</div>
 
 <script>
 (() => {
     const form = document.getElementById("support-form");
     const status = document.getElementById("support-form-status");
+    const successMessage = document.getElementById("support-success-message");
 
-    if (!form || !status) {
+    if (!form || !status || !successMessage) {
         return;
     }
 
@@ -107,10 +121,11 @@
             }
 
             form.reset();
-            status.classList.add("is-success");
-            status.textContent = result.message;
+            form.hidden = true;
+            successMessage.hidden = false;
+            successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
         } catch (error) {
-            status.classList.add("is-error");
+            status.className = "support-form-status is-error";
             status.textContent =
                 error.message ||
                 "Your support request could not be sent. Please try again.";
