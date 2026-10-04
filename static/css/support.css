@@ -89,21 +89,24 @@
 
 .support-submission-complete {
     min-height: calc(100vh - 80px);
+    min-height: calc(100svh - 80px);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     padding: 48px 24px;
+    text-align: center;
 }
 
 .support-success-message {
-    width: min(100%, 900px);
+    width: min(100%, 1000px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 0 auto;
+    margin: auto;
     padding: 36px 20px;
     box-sizing: border-box;
 }
@@ -113,18 +116,24 @@
 }
 
 .support-success-message h2 {
-    margin: 0 0 24px;
-    font-size: clamp(2.4rem, 6vw, 4.5rem);
-    line-height: 1.08;
+    width: 100%;
+    margin: 0 0 28px;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    text-align: center;
     color: var(--gec-text);
     outline: none;
 }
 
 .support-success-message p {
+    width: 100%;
     margin: 0;
     max-width: 760px;
-    font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     line-height: 1.6;
+    text-align: center;
     color: var(--gec-text);
 }
 
@@ -139,10 +148,15 @@
 
     .support-submission-complete {
         min-height: calc(100vh - 64px);
+        min-height: calc(100svh - 64px);
         padding: 32px 16px;
     }
 
     .support-success-message {
         padding: 24px 8px;
+    }
+
+    .support-success-message h2 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
     }
 }
