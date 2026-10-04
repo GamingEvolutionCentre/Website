@@ -1,5 +1,5 @@
 <header class="site-header gec-site-header">
-    <div class="nav-container gec-nav-container">
+    <div class="nav-container gec-nav-container" id="gec-nav-container">
         <a class="site-logo gec-brand gec-brand-logo-link" href="{{ site.Home.RelPermalink }}" aria-label="Gaming Evolution Centre home">
             <img
                 class="gec-brand-image"
@@ -13,19 +13,6 @@
 
         {{ partial "search.html" . }}
 
-        <button
-            class="mobile-menu-button"
-            id="mobile-menu-button"
-            type="button"
-            aria-label="Open navigation"
-            aria-controls="main-navigation"
-            aria-expanded="false"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
         <nav class="main-nav gec-main-nav" id="main-navigation" aria-label="Main navigation">
             <a href="/posts/">Articles</a>
             <a href="/downloads/">Downloads</a>
@@ -33,6 +20,21 @@
         </nav>
 
         <div class="gec-header-actions">
+            <button
+                type="button"
+                class="mobile-search-button gec-icon-button"
+                id="mobile-search-button"
+                aria-label="Open search"
+                aria-controls="site-search"
+                aria-expanded="false"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                    <path d="M16 16L21 21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                </svg>
+                <span class="sr-only">Search</span>
+            </button>
+
             <button
                 type="button"
                 class="theme-toggle gec-icon-button"
@@ -58,6 +60,19 @@
                     </g>
                 </svg>
                 <span class="sr-only">Toggle colour theme</span>
+            </button>
+
+            <button
+                class="mobile-menu-button"
+                id="mobile-menu-button"
+                type="button"
+                aria-label="Open navigation"
+                aria-controls="main-navigation"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </div>
