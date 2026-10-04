@@ -67,7 +67,7 @@
         aria-live="polite"
         hidden
     >
-        <h2>Thank you for your submission</h2>
+        <h2 tabindex="-1">Thank you for your submission</h2>
         <p>Check your inbox or junk for the automated email with details.</p>
     </section>
 </div>
@@ -77,8 +77,9 @@
     const form = document.getElementById("support-form");
     const status = document.getElementById("support-form-status");
     const successMessage = document.getElementById("support-success-message");
+    const mainContent = document.getElementById("main-content");
 
-    if (!form || !status || !successMessage) {
+    if (!form || !status || !successMessage || !mainContent) {
         return;
     }
 
@@ -120,10 +121,15 @@
                 );
             }
 
-            form.reset();
-            form.hidden = true;
             successMessage.hidden = false;
-            successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+            mainContent.classList.add("support-submission-complete");
+            mainContent.replaceChildren(successMessage);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+            const heading = successMessage.querySelector("h2");
+            if (heading) {
+                heading.focus({ preventScroll: true });
+            }
         } catch (error) {
             status.className = "support-form-status is-error";
             status.textContent =
