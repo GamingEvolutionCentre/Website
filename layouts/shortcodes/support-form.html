@@ -66,9 +66,15 @@
         role="status"
         aria-live="polite"
         hidden
+        style="width:100%;max-width:1000px;margin:auto;text-align:center;box-sizing:border-box;padding:40px 24px;"
     >
-        <h2 tabindex="-1">Thank you for your submission</h2>
-        <p>Check your inbox or junk for the automated email with details.</p>
+        <h2
+            tabindex="-1"
+            style="margin:0 0 28px;font-size:clamp(3rem,8vw,6rem);font-weight:900;line-height:1.02;letter-spacing:-0.03em;text-align:center;color:var(--gec-text);"
+        >Thank you for your submission</h2>
+        <p
+            style="margin:0 auto;max-width:760px;font-size:clamp(1.1rem,2.5vw,1.5rem);line-height:1.6;text-align:center;color:var(--gec-text);"
+        >Check your inbox or junk for the automated email with details.</p>
     </section>
 </div>
 
@@ -122,8 +128,17 @@
             }
 
             successMessage.hidden = false;
-            mainContent.classList.add("support-submission-complete");
             mainContent.replaceChildren(successMessage);
+
+            mainContent.style.width = "100%";
+            mainContent.style.minHeight = "calc(100vh - 80px)";
+            mainContent.style.display = "flex";
+            mainContent.style.alignItems = "center";
+            mainContent.style.justifyContent = "center";
+            mainContent.style.boxSizing = "border-box";
+            mainContent.style.padding = "48px 24px";
+            mainContent.style.textAlign = "center";
+
             window.scrollTo({ top: 0, behavior: "smooth" });
 
             const heading = successMessage.querySelector("h2");
