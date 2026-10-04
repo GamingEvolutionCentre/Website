@@ -1,7 +1,9 @@
 {{ define "main" }}
 <section class="page-hero">
     <div class="container">
-        <p class="section-label">GAMING EVOLUTION CENTRE</p>
+        {{ if ne .Section "downloads" }}
+            <p class="section-label">GAMING EVOLUTION CENTRE</p>
+        {{ end }}
         <h1>{{ .Title }}</h1>
         {{ with .Content }}
             <div class="page-intro">{{ . }}</div>
