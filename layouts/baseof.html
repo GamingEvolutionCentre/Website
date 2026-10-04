@@ -29,6 +29,14 @@
 
     {{ partial "head.html" . }}
 
+    {{ if or .IsHome (eq .Section "posts") (eq .Section "downloads") (eq .RelPermalink "/support/") }}
+    <style>
+        #main-content .section-label {
+            display: none !important;
+        }
+    </style>
+    {{ end }}
+
 </head>
 
 <body>
@@ -40,6 +48,44 @@
     >
         {{ block "main" . }}{{ end }}
     </main>
+
+    {{ if or .IsHome (eq .Section "posts") (eq .Section "downloads") (eq .RelPermalink "/support/") }}
+    <script>
+        (() => {
+            const removeStandaloneBrandText = () => {
+                const main = document.getElementById("main-content");
+
+                if (!main) {
+                    return;
+                }
+
+                const candidates = main.querySelectorAll(
+                    "p, span, div, h1, h2, h3, h4, h5, h6"
+                );
+
+                for (const element of candidates) {
+                    if (
+                        element.children.length === 0 &&
+                        element.textContent.trim().toLowerCase() ===
+                            "gaming evolution centre"
+                    ) {
+                        element.remove();
+                    }
+                }
+            };
+
+            if (document.readyState === "loading") {
+                document.addEventListener(
+                    "DOMContentLoaded",
+                    removeStandaloneBrandText,
+                    { once: true }
+                );
+            } else {
+                removeStandaloneBrandText();
+            }
+        })();
+    </script>
+    {{ end }}
 
     {{ partial "footer.html" . }}
 
