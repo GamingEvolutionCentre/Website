@@ -39,6 +39,16 @@
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--gec-text) 16%, transparent);
 }
 
+.support-honeypot {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+}
+
 .support-submit {
     width: fit-content;
     min-width: 120px;
@@ -55,6 +65,26 @@
 .support-submit:hover,
 .support-submit:focus-visible {
     opacity: 0.88;
+}
+
+.support-submit:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.support-form-status {
+    min-height: 1.5em;
+    margin: 0;
+    font-weight: 600;
+    color: var(--gec-text);
+}
+
+.support-form-status.is-success {
+    color: #16803a;
+}
+
+.support-form-status.is-error {
+    color: #c62828;
 }
 
 @media (max-width: 600px) {
