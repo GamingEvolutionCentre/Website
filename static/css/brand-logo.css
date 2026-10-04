@@ -1,0 +1,44 @@
+/* Gaming Evolution Centre logo sizing. Match the reference logo by visible height, not width. */
+
+.gec-brand-logo-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+    line-height: 0 !important;
+    text-decoration: none !important;
+}
+
+.gec-brand-logo-link::before {
+    content: none !important;
+    display: none !important;
+}
+
+.gec-brand-image {
+    display: block !important;
+    height: 35px !important;
+    width: auto !important;
+    max-height: 35px !important;
+    max-width: none !important;
+    object-fit: contain;
+}
+
+@media (max-width: 1040px) {
+    .gec-brand-image {
+        height: 30px !important;
+        max-height: 30px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .gec-brand-image {
+        height: 16px !important;
+        max-height: 16px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .gec-brand-image {
+        height: 12.5px !important;
+        max-height: 12.5px !important;
+    }
+}
