@@ -14,19 +14,6 @@
         display: none !important;
     }
 
-    .gec-brand {
-        order: 0 !important;
-        flex: 0 1 auto !important;
-        max-width: none !important;
-        overflow: visible !important;
-    }
-
-    .gec-brand-image {
-        width: 240px !important;
-        max-width: 240px !important;
-        max-height: none !important;
-    }
-
     .gec-nav-container > .site-search {
         order: 0 !important;
         flex: 0 1 180px !important;
@@ -77,12 +64,6 @@
     .gec-nav-container {
         width: calc(100% - 16px) !important;
         gap: 6px !important;
-    }
-
-    .gec-brand-image {
-        width: 165px !important;
-        max-width: 165px !important;
-        max-height: none !important;
     }
 
     .gec-nav-container > .site-search {
@@ -140,12 +121,6 @@
     .gec-nav-container {
         width: calc(100% - 12px) !important;
         gap: 4px !important;
-    }
-
-    .gec-brand-image {
-        width: 125px !important;
-        max-width: 125px !important;
-        max-height: none !important;
     }
 
     .gec-nav-container > .site-search {
