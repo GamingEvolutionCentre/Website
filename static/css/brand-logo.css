@@ -14,25 +14,25 @@
 
 .gec-brand-image {
     display: block;
-    width: 220px;
-    max-width: 220px;
+    width: 240px;
+    max-width: 240px;
     height: auto;
-    max-height: 44px;
+    max-height: none;
     object-fit: contain;
 }
 
 @media (max-width: 1040px) {
     .gec-brand-image {
-        width: 190px;
-        max-width: 190px;
-        max-height: 38px;
+        width: 210px;
+        max-width: 210px;
+        max-height: none;
     }
 }
 
 @media (max-width: 600px) {
     .gec-brand-image {
-        width: 165px;
-        max-width: 165px;
-        max-height: 33px;
+        width: 170px;
+        max-width: 170px;
+        max-height: none;
     }
 }
