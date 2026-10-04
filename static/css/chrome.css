@@ -42,14 +42,15 @@ html[data-theme] .gec-site-header,
     min-width: 0;
 }
 
-/* On desktop, keep the full search field directly beside Articles. */
+/* On desktop, keep the full search field beside Articles and move only the search field left. */
 @media (min-width: 901px) {
     .gec-nav-container > .site-search {
         flex: 0 1 285px !important;
         width: 285px !important;
         max-width: 285px !important;
-        margin-left: auto;
-        transform: translateX(-18px);
+        margin-left: auto !important;
+        margin-right: 36px !important;
+        transform: none !important;
     }
 
     .gec-main-nav {
