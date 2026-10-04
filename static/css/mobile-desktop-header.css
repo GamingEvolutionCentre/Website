@@ -21,6 +21,12 @@
         overflow: visible !important;
     }
 
+    .gec-brand-image {
+        width: 240px !important;
+        max-width: 240px !important;
+        max-height: none !important;
+    }
+
     .gec-nav-container > .site-search {
         order: 0 !important;
         flex: 0 1 180px !important;
@@ -74,8 +80,8 @@
     }
 
     .gec-brand-image {
-        width: 155px !important;
-        max-width: 155px !important;
+        width: 165px !important;
+        max-width: 165px !important;
         max-height: none !important;
     }
 
@@ -137,8 +143,8 @@
     }
 
     .gec-brand-image {
-        width: 115px !important;
-        max-width: 115px !important;
+        width: 125px !important;
+        max-width: 125px !important;
         max-height: none !important;
     }
 
