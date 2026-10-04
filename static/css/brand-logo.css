@@ -17,7 +17,6 @@
     width: 240px;
     max-width: 240px;
     height: auto;
-    max-height: none;
     object-fit: contain;
 }
 
@@ -25,14 +24,12 @@
     .gec-brand-image {
         width: 210px;
         max-width: 210px;
-        max-height: none;
     }
 }
 
 @media (max-width: 600px) {
     .gec-brand-image {
-        width: 170px;
-        max-width: 170px;
-        max-height: none;
+        width: 140px;
+        max-width: 140px;
     }
 }
