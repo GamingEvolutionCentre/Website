@@ -1,7 +1,9 @@
 {{ define "main" }}
 <section class="page-hero">
     <div class="container">
-        <p class="section-label">GAMING EVOLUTION CENTRE</p>
+        {{ if ne .RelPermalink "/support/" }}
+            <p class="section-label">GAMING EVOLUTION CENTRE</p>
+        {{ end }}
         <h1 data-pagefind-weight="8">{{ .Title }}</h1>
 
         {{ with .Params.description }}
