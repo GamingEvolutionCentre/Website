@@ -49,6 +49,7 @@ html[data-theme] .gec-site-header,
         width: 285px !important;
         max-width: 285px !important;
         margin-left: auto;
+        transform: translateX(-18px);
     }
 
     .gec-main-nav {
