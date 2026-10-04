@@ -1,116 +1,198 @@
-/* Keep the desktop header layout on tablets and phones.
-   The structure stays horizontal; only spacing and sizing compresses. */
+/* Mobile and tablet header.
+   Desktop keeps the existing full navigation and search field. */
+
+.mobile-search-button,
+.gec-header-actions .mobile-menu-button {
+    display: none !important;
+}
 
 @media (max-width: 900px) {
     .gec-nav-container {
-        width: calc(100% - 20px) !important;
+        width: calc(100% - 24px) !important;
         min-height: 62px !important;
-        padding: 0 !important;
-        flex-wrap: nowrap !important;
+        margin: 0 auto !important;
+        padding: 10px 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
         gap: 10px !important;
     }
 
-    .mobile-menu-button {
-        display: none !important;
+    .gec-brand-logo-link {
+        order: 1 !important;
+        margin-right: auto !important;
+    }
+
+    .gec-header-actions {
+        order: 2 !important;
+        width: auto !important;
+        flex: 0 0 auto !important;
+        margin: 0 0 0 auto !important;
+        padding-left: 0 !important;
+        border-left: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    .mobile-search-button,
+    .gec-header-actions .mobile-menu-button,
+    .gec-header-actions .theme-toggle,
+    html[data-theme] .gec-header-actions .theme-toggle {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        flex: 0 0 36px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+        border: 1px solid var(--gec-chrome-border) !important;
+        border-radius: 2px !important;
+        color: #d7e1e8 !important;
+        box-shadow: none !important;
+        cursor: pointer;
+    }
+
+    .mobile-search-button:hover,
+    .mobile-search-button:focus-visible,
+    .mobile-search-button.open,
+    .gec-header-actions .mobile-menu-button:hover,
+    .gec-header-actions .mobile-menu-button:focus-visible,
+    .gec-header-actions .mobile-menu-button.open {
+        background: var(--gec-chrome-bg-hover) !important;
+        border-color: #426176 !important;
+        color: #ffffff !important;
+        outline: none;
+    }
+
+    .mobile-search-button svg {
+        width: 18px !important;
+        height: 18px !important;
+        display: block;
+    }
+
+    .gec-header-actions .mobile-menu-button {
+        flex-direction: column !important;
+        gap: 4px !important;
+    }
+
+    .gec-header-actions .mobile-menu-button span {
+        display: block !important;
+        width: 16px !important;
+        height: 2px !important;
+        margin: 0 !important;
+        background: currentColor !important;
+        border-radius: 999px;
+        transition: transform 140ms ease, opacity 140ms ease;
+    }
+
+    .gec-header-actions .mobile-menu-button.open span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .gec-header-actions .mobile-menu-button.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .gec-header-actions .mobile-menu-button.open span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
     }
 
     .gec-nav-container > .site-search {
-        order: 0 !important;
-        flex: 0 1 180px !important;
-        width: clamp(90px, 26vw, 180px) !important;
-        min-width: 90px !important;
-        max-width: 180px !important;
-        margin: 0 0 0 auto !important;
+        order: 3 !important;
+        display: none !important;
+        position: relative !important;
+        flex: 1 0 100% !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+    }
+
+    .gec-nav-container.mobile-search-open > .site-search {
+        display: block !important;
     }
 
     .gec-nav-container > .site-search .header-search-bar {
-        height: 36px !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        height: 40px !important;
+        margin: 0 !important;
+    }
+
+    .gec-nav-container > .site-search .search-inline-panel {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
     }
 
     .gec-main-nav,
     .gec-main-nav.open {
-        display: flex !important;
-        order: 0 !important;
+        order: 4 !important;
         position: static !important;
-        width: auto !important;
-        flex: 0 0 auto !important;
+        width: 100% !important;
+        flex: 1 0 100% !important;
         padding: 0 !important;
-        flex-direction: row !important;
-        align-items: center !important;
+        margin: 0 !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
         justify-content: flex-start !important;
-        gap: 10px !important;
-        background: transparent !important;
-        border: 0 !important;
+        gap: 0 !important;
+        background: var(--gec-chrome-bg) !important;
+        border: 1px solid var(--gec-chrome-border) !important;
+        border-radius: 2px !important;
         box-shadow: none !important;
     }
 
-    .gec-main-nav > a {
-        padding: 21px 0 19px !important;
-        border: 0 !important;
-        font-size: 0.74rem !important;
+    .gec-main-nav {
+        display: none !important;
     }
 
-    .gec-header-actions {
-        order: 0 !important;
-        width: auto !important;
-        flex: 0 0 auto !important;
-        margin: 0 !important;
-        padding-left: 10px !important;
-        border-left: 1px solid var(--gec-chrome-border) !important;
+    .gec-main-nav.open {
+        display: flex !important;
+    }
+
+    .gec-main-nav > a {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 12px 14px !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(41, 64, 80, 0.75) !important;
+        font-size: 0.82rem !important;
+        text-align: left !important;
+    }
+
+    .gec-main-nav > a:last-child {
+        border-bottom: 0 !important;
     }
 }
 
 @media (max-width: 600px) {
     .gec-nav-container {
         width: calc(100% - 16px) !important;
-        gap: 6px !important;
-    }
-
-    .gec-nav-container > .site-search {
-        flex: 0 1 90px !important;
-        width: clamp(64px, 21vw, 90px) !important;
-        min-width: 64px !important;
-        max-width: 90px !important;
-        margin-bottom: 0 !important;
-    }
-
-    .gec-nav-container > .site-search .header-search-bar {
-        height: 32px !important;
-        padding: 0 7px !important;
-        gap: 5px !important;
-    }
-
-    .gec-nav-container > .site-search .header-search-icon {
-        width: 14px !important;
-        height: 14px !important;
-        flex-basis: 14px !important;
-    }
-
-    .gec-nav-container > .site-search .header-search-input {
-        font-size: 0.74rem !important;
-    }
-
-    .gec-main-nav {
-        gap: 6px !important;
-    }
-
-    .gec-main-nav > a {
-        font-size: 0.64rem !important;
-        padding: 21px 0 19px !important;
+        gap: 8px !important;
     }
 
     .gec-header-actions {
-        padding-left: 5px !important;
+        gap: 6px !important;
     }
 
+    .mobile-search-button,
+    .gec-header-actions .mobile-menu-button,
     .gec-header-actions .theme-toggle,
     html[data-theme] .gec-header-actions .theme-toggle {
-        width: 30px !important;
-        height: 30px !important;
-        min-width: 30px !important;
-        flex-basis: 30px !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        flex-basis: 32px !important;
     }
 
+    .mobile-search-button svg,
     .gec-header-actions .theme-toggle-icon {
         width: 16px !important;
         height: 16px !important;
@@ -120,33 +202,20 @@
 @media (max-width: 360px) {
     .gec-nav-container {
         width: calc(100% - 12px) !important;
-        gap: 4px !important;
-    }
-
-    .gec-nav-container > .site-search {
-        flex-basis: 58px !important;
-        width: 58px !important;
-        min-width: 52px !important;
-        max-width: 58px !important;
-    }
-
-    .gec-main-nav {
-        gap: 4px !important;
-    }
-
-    .gec-main-nav > a {
-        font-size: 0.58rem !important;
+        gap: 6px !important;
     }
 
     .gec-header-actions {
-        padding-left: 3px !important;
+        gap: 4px !important;
     }
 
+    .mobile-search-button,
+    .gec-header-actions .mobile-menu-button,
     .gec-header-actions .theme-toggle,
     html[data-theme] .gec-header-actions .theme-toggle {
-        width: 28px !important;
-        height: 28px !important;
-        min-width: 28px !important;
-        flex-basis: 28px !important;
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        flex-basis: 30px !important;
     }
 }
