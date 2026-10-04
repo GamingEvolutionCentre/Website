@@ -1,0 +1,68 @@
+.support-form {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+
+.support-field {
+    display: grid;
+    gap: 8px;
+}
+
+.support-field label {
+    font-weight: 700;
+    color: var(--gec-text);
+}
+
+.support-field input,
+.support-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid var(--gec-border-strong);
+    border-radius: 4px;
+    background: var(--gec-surface-2);
+    color: var(--gec-text);
+    font: inherit;
+    outline: none;
+}
+
+.support-field textarea {
+    min-height: 190px;
+    resize: vertical;
+}
+
+.support-field input:focus,
+.support-field textarea:focus {
+    border-color: var(--gec-text);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--gec-text) 16%, transparent);
+}
+
+.support-submit {
+    width: fit-content;
+    min-width: 120px;
+    padding: 12px 24px;
+    border: 1px solid var(--gec-text);
+    border-radius: 4px;
+    background: var(--gec-text);
+    color: var(--gec-bg);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.support-submit:hover,
+.support-submit:focus-visible {
+    opacity: 0.88;
+}
+
+@media (max-width: 600px) {
+    .support-form {
+        gap: 16px;
+    }
+
+    .support-submit {
+        width: 100%;
+    }
+}
