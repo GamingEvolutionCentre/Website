@@ -6,6 +6,24 @@
     display: none !important;
 }
 
+/* Current-page indicator for desktop, tablet and phone navigation. */
+.gec-main-nav > a {
+    position: relative !important;
+}
+
+.gec-main-nav > a.is-active::after {
+    content: "";
+    display: block !important;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 26px;
+    height: 2px;
+    transform: translateX(-50%);
+    background: currentColor;
+    border-radius: 999px;
+}
+
 @media (max-width: 900px) {
     .gec-nav-container {
         width: calc(100% - 24px) !important;
@@ -165,6 +183,13 @@
         border-bottom: 1px solid rgba(41, 64, 80, 0.75) !important;
         font-size: 0.82rem !important;
         text-align: left !important;
+    }
+
+    .gec-main-nav > a.is-active::after {
+        left: 14px;
+        bottom: 5px;
+        width: 26px;
+        transform: none;
     }
 
     .gec-main-nav > a:last-child {
