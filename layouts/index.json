@@ -6,6 +6,24 @@
             "title" .Title
             "tags" (.Params.tags | default (slice))
             "categories" (.Params.categories | default (slice))
+            "technologies" (.Params.technologies | default (slice))
+            "contents" (.Plain | plainify)
+            "permalink" .RelPermalink
+            "description" (.Params.description | default .Summary | plainify)
+            "section" .Section
+            "type" .Type
+            "keywords" (.Params.search_terms | default (slice))
+        ) -}}
+    {{- end -}}
+{{- end -}}
+
+{{- range where .Site.RegularPages "Section" "projects" -}}
+    {{- if not .Params.excludeFromSearch -}}
+        {{- $pages = $pages | append (dict
+            "title" .Title
+            "tags" (.Params.tags | default (slice))
+            "categories" (.Params.categories | default (slice))
+            "technologies" (.Params.technologies | default (slice))
             "contents" (.Plain | plainify)
             "permalink" .RelPermalink
             "description" (.Params.description | default .Summary | plainify)
