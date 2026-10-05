@@ -6,9 +6,8 @@
     display: none !important;
 }
 
-/* Desktop keeps the search bar but shows no magnifying-glass icon. */
+/* On desktop, hide only the separate search button beside the theme toggle. */
 @media (min-width: 901px) {
-    .gec-nav-container > .site-search .header-search-icon,
     .gec-header-actions > .mobile-search-button {
         display: none !important;
         visibility: hidden !important;
@@ -19,10 +18,6 @@
         margin: 0 !important;
         padding: 0 !important;
         border: 0 !important;
-    }
-
-    .gec-nav-container > .site-search .header-search-bar {
-        gap: 0 !important;
     }
 }
 
