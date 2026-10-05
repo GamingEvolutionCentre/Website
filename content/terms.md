@@ -50,6 +50,18 @@ Where a download is supplied with separate licence terms, those licence terms go
 
 Nothing on the website should be interpreted as granting permission to copy, redistribute or modify software beyond the permissions given by its applicable licence.
 
+## Software licence
+
+The source code in the website repository is released under the **BSD 3-Clause License** where that licence applies.
+
+The BSD 3-Clause License permits redistribution and use in source and binary forms, with or without modification, provided that its conditions are followed. These conditions include keeping the required copyright notice, licence conditions and disclaimer with redistributed copies, and not using the copyright holder's or contributors' names to endorse or promote derived products without specific permission.
+
+Software covered by this licence is provided on an **"as is"** basis, without the warranties described in the licence, and subject to the liability limitations set out in the licence.
+
+The complete licence text is available in the repository: [BSD 3-Clause License](https://github.com/GamingEvolutionCentre/Website/blob/main/LICENSE.md).
+
+Where another project, download or file includes a different licence, that project's own licence applies instead.
+
 ## Website content and intellectual property
 
 Unless otherwise stated, website content such as articles, written material, graphics, page designs, logos, branding and other original material may not be copied, reproduced, republished, sold or redistributed without permission, except where permitted by law.
