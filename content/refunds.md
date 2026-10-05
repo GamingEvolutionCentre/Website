@@ -1,7 +1,7 @@
 +++
 title = "Refunds"
 draft = false
-description = "Refund information for Gaming Evolution Centre."
+description = "Refund information."
 search_terms = ["refunds", "refund policy", "returns"]
 +++
 
