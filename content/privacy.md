@@ -1,18 +1,18 @@
 +++
 title = "Privacy Policy"
 draft = false
-description = "Gaming Evolution Centre privacy policy and UK GDPR information."
+description = "Privacy policy and UK GDPR information."
 +++
 
 Last updated: **5 October 2026**
 
-This Privacy Policy explains what personal information Gaming Evolution Centre collects through the website, why it is collected, how it is handled, and the rights you have under UK data protection law.
+This Privacy Policy explains what personal information I collect through the website, why it is collected, how it is handled, and the rights you have under UK data protection law.
 
 ## Browsing the website without submitting the support form
 
-Gaming Evolution Centre does not require you to create an account, sign in or provide your name or email address simply to browse the website.
+This website does not require you to create an account, sign in or provide your name or email address simply to browse the website.
 
-If you only browse the website and do not submit the support form, Gaming Evolution Centre does not receive your name or email address from you.
+If you only browse the website and do not submit the support form, I do not receive your name or email address from you.
 
 However, Cloudflare may still process limited technical information needed to deliver, secure and operate the website, such as your IP address and normal web-request, browser, device, connection, security and diagnostic information.
 
@@ -30,9 +30,9 @@ This information is collected so that I can read your support request, respond t
 
 ## Lawful basis for processing support requests
 
-For ordinary support, help and complaint requests submitted through the website, Gaming Evolution Centre relies on **legitimate interests** as the lawful basis for processing the personal information you provide.
+For ordinary support, help and complaint requests submitted through the website, I rely on **legitimate interests** as the lawful basis for processing the personal information you provide.
 
-The legitimate interest is being able to receive, read, respond to and resolve support requests from people who choose to contact Gaming Evolution Centre.
+The legitimate interest is being able to receive, read, respond to and resolve support requests from people who choose to contact me through the website.
 
 The information requested through the form is limited to what is needed to identify the request, contact you and understand the problem or complaint.
 
@@ -50,17 +50,17 @@ Once the matter has been resolved, the information is no longer needed for the p
 
 ## Who can access your information
 
-Only I can access the support information sent to Gaming Evolution Centre through the support email account.
+Only I can access the support information sent through the support email account.
 
 Cloudflare and IONOS may process the information as part of providing the website infrastructure and email services used to deliver your support request.
 
 ## Analytics and cookies
 
-Gaming Evolution Centre does not use website analytics and does not use cookies to track visitors.
+This website does not use website analytics and does not use cookies to track visitors.
 
 ## Third-party services and data processing
 
-Gaming Evolution Centre uses third-party services to operate the website and deliver support requests. These providers may process personal information and technical information only as needed to provide their services.
+This website uses third-party services to operate the website and deliver support requests. These providers may process personal information and technical information only as needed to provide their services.
 
 ### Cloudflare
 
@@ -74,7 +74,7 @@ When you visit the website or submit the support form, Cloudflare may process in
 - Browser, device or connection information contained in normal web requests
 - Security, performance and diagnostic information generated while operating and protecting the website
 
-Cloudflare is used to receive the support form request and pass the submitted information to the email-sending process. Gaming Evolution Centre does not use Cloudflare analytics to track visitors.
+Cloudflare is used to receive the support form request and pass the submitted information to the email-sending process. I do not use Cloudflare analytics to track visitors.
 
 ### IONOS
 
@@ -94,9 +94,9 @@ Cloudflare and IONOS have their own privacy and data-protection obligations for 
 
 ## When UK GDPR rights apply
 
-Gaming Evolution Centre does not require visitors to create an account, sign in or provide personal information simply to browse the website.
+This website does not require visitors to create an account, sign in or provide personal information simply to browse the website.
 
-If you do not submit the support form, Gaming Evolution Centre does not collect your name or email address from you.
+If you do not submit the support form, I do not collect your name or email address from you.
 
 If you choose to submit the support form, the name, email address and message you provide are personal data. Your rights under UK data-protection law may therefore apply to that information.
 
@@ -114,7 +114,7 @@ Under the UK GDPR and Data Protection Act 2018, you may have rights over your pe
 
 Some rights depend on the circumstances and the legal basis for processing.
 
-Because Gaming Evolution Centre relies on legitimate interests for ordinary support requests rather than consent, the right to withdraw consent does not normally apply to that processing. You can still ask about, access, correct or request deletion of your information where the law provides those rights.
+Because I rely on legitimate interests for ordinary support requests rather than consent, the right to withdraw consent does not normally apply to that processing. You can still ask about, access, correct or request deletion of your information where the law provides those rights.
 
 ## Contact about your personal data
 
