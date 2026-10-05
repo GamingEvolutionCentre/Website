@@ -14,10 +14,10 @@
         {{ partial "search.html" . }}
 
         <nav class="main-nav gec-main-nav" id="main-navigation" aria-label="Main navigation">
-            <a href="{{ site.Home.RelPermalink }}">Home</a>
-            <a href="/posts/">Articles</a>
-            <a href="/downloads/">Downloads</a>
-            <a href="/support/">Support</a>
+            <a href="{{ site.Home.RelPermalink }}"{{ if .IsHome }} class="is-active" aria-current="page"{{ end }}>Home</a>
+            <a href="/posts/"{{ if eq .Section "posts" }} class="is-active" aria-current="page"{{ end }}>Articles</a>
+            <a href="/downloads/"{{ if eq .Section "downloads" }} class="is-active" aria-current="page"{{ end }}>Downloads</a>
+            <a href="/support/"{{ if eq .RelPermalink ("/support/" | relURL) }} class="is-active" aria-current="page"{{ end }}>Support</a>
         </nav>
 
         <div class="gec-header-actions">
