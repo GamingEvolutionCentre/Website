@@ -1,4 +1,4 @@
 /* Homepage title sizing */
 .old-hero h1 {
-    font-size: clamp(1.85rem, 3.8vw, 3.2rem) !important;
+    font-size: clamp(2.25rem, 3vw, 2.6rem) !important;
 }
