@@ -236,6 +236,16 @@
     transform: translateX(0);
 }
 
+@media (min-width: 901px) {
+    .site-search .header-search-icon {
+        display: none !important;
+    }
+
+    .site-search .header-search-bar {
+        gap: 0;
+    }
+}
+
 @media (max-width: 1050px) {
     .site-search {
         max-width: 210px;
