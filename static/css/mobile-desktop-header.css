@@ -6,6 +6,26 @@
     display: none !important;
 }
 
+/* Desktop keeps the search bar but shows no magnifying-glass icon. */
+@media (min-width: 901px) {
+    .gec-nav-container > .site-search .header-search-icon,
+    .gec-header-actions > .mobile-search-button {
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+        min-width: 0 !important;
+        flex: 0 0 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+
+    .gec-nav-container > .site-search .header-search-bar {
+        gap: 0 !important;
+    }
+}
+
 /* Current-page indicator for desktop, tablet and phone navigation. */
 .gec-main-nav > a {
     position: relative !important;
